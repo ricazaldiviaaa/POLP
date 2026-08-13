@@ -1,31 +1,28 @@
 import React from "react";
 
-function AnniversaryScreen({
-  anniversaryMessages,
-  onSelect
-}) {
+function AnniversaryScreen({ onSelect }) {
 
   const cards = [
     {
       year: 1,
       icon: "💌",
       description:
-        "The beginning of our forever. A year filled with first memories, first adventures and endless love."
+        "The beginning of our forever. A year filled with first memories, first adventures and endless love.",
     },
 
     {
       year: 2,
       icon: "💕",
       description:
-        "Two years, countless memories, and somehow I still fall for you every single day."
+        "Two years, countless memories, and somehow I still fall for you every single day.",
     },
 
     {
       year: 3,
       icon: "💖",
       description:
-        "Three beautiful years together. Still my favorite person, favorite place and favorite story."
-    }
+        "Three beautiful years together. Still my favorite person, favorite place and favorite story.",
+    },
   ];
 
 
@@ -51,43 +48,53 @@ function AnniversaryScreen({
       </p>
 
 
-      {cards.map((card) => (
+      <div className="anniversary-list">
 
-        <button
-          className="anniversary-card"
-          key={card.year}
-          onClick={() => onSelect(card.year)}
-        >
+        {cards.map((card) => (
 
-          <div className="anniversary-number">
-            Chapter{" "}
-            {String(card.year).padStart(2, "0")}
-          </div>
+          <button
+            type="button"
+            key={card.year}
+            className="anniversary-card"
+            onClick={() => onSelect(card.year)}
+          >
 
-
-          <div className="anniversary-icon">
-            {card.icon}
-          </div>
+            <div className="anniversary-number">
+              Chapter{" "}
+              {String(card.year).padStart(2, "0")}
+            </div>
 
 
-          <div className="anniversary-info">
+            <div className="anniversary-icon">
+              {card.icon}
+            </div>
 
-            <h3>
-              {anniversaryMessages[card.year].title}
-            </h3>
 
-            <p>
-              {card.description}
-            </p>
+            <div className="anniversary-info">
 
-          </div>
+              <h3>
+                {card.year === 1 && "1st Anniversary"}
 
-        </button>
+                {card.year === 2 && "2nd Anniversary"}
 
-      ))}
+                {card.year === 3 && "3rd Anniversary"}
+              </h3>
+
+              <p>
+                {card.description}
+              </p>
+
+            </div>
+
+          </button>
+
+        ))}
+
+      </div>
 
     </section>
   );
 }
+
 
 export default AnniversaryScreen;

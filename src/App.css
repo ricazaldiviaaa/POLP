@@ -174,7 +174,9 @@ button {
 }
 
 
-/* People */
+/* =========================================================
+   PEOPLE
+========================================================= */
 
 .person {
   width: 100px;
@@ -204,7 +206,7 @@ button {
 }
 
 
-/* Left */
+/* Left person */
 
 .person-left {
   background: #b582b8;
@@ -219,7 +221,7 @@ button {
 }
 
 
-/* Right */
+/* Right person */
 
 .person-right {
   background: #80628e;
@@ -234,7 +236,9 @@ button {
 }
 
 
-/* Heart between couple */
+/* =========================================================
+   HEART BETWEEN COUPLE
+========================================================= */
 
 .holding-heart {
   position: absolute;
@@ -371,7 +375,9 @@ button {
 }
 
 
-/* Header */
+/* =========================================================
+   ANNIVERSARY HEADER
+========================================================= */
 
 .topbar {
   display: flex;
@@ -425,7 +431,9 @@ button {
 }
 
 
-/* Anniversary cards */
+/* =========================================================
+   ANNIVERSARY CARDS
+========================================================= */
 
 .anniversary-list {
   display: grid;
@@ -507,7 +515,7 @@ button {
 
 
 /* =========================================================
-   FOOD SCREEN
+   FOOD / MEMORY SCREEN
 ========================================================= */
 
 .memory-screen {
@@ -532,7 +540,207 @@ button {
 
   gap: 18px;
 
-  background: #eadbef;
+}
+
+/* =========================================================
+   FOOD GUIDE HEADER
+========================================================= */
+
+.memory-header {
+  padding: 35px 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 0;
+
+  background: transparent;
+}
+
+.memory-detail-header {
+  padding: 35px 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: transparent;
+}
+
+.memory-detail-header .memory-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.memory-header small {
+  display: block;
+
+  color: #a07fa5;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.memory-header h2 {
+  margin: 10px 0 0;
+
+  color: #604969;
+
+  font-size: 30px;
+
+  font-weight: normal;
+}
+
+.memory-header .intro {
+  margin: 15px 0 0;
+
+  color: #88768b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FOOD GUIDE HEADER + SEARCH
+========================================================= */
+
+.memory-header-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* =========================================================
+   FOOD SEARCH
+========================================================= */
+
+.food-search {
+  width: 320px;
+  max-width: 100%;
+  flex-shrink: 0;
+
+  position: relative;
+
+  box-sizing: border-box;
+}
+
+.food-search input {
+  width: 100%;
+  min-height: 46px;
+
+  display: block;
+
+  padding: 13px 42px 13px 42px;
+
+  border: 1px solid #f2c2d5;
+  border-radius: 25px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #594c52;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  box-shadow:
+    0 4px 12px rgba(190, 100, 145, 0.08);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.food-search input::placeholder {
+  color: #a58d9b;
+}
+
+.food-search input:focus {
+  border-color: #d98bab;
+
+  box-shadow:
+    0 0 0 3px rgba(217, 139, 171, 0.12),
+    0 4px 12px rgba(190, 100, 145, 0.08);
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.food-search button {
+  position: absolute;
+
+  top: 50%;
+  right: 10px;
+
+  width: 26px;
+  height: 26px;
+
+  transform: translateY(-50%);
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #fff0f6;
+  color: #b84f7d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+.food-search button:hover {
+  background: #fbe1ec;
+}
+
+.food-search button:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+
+/* =========================================================
+   FOOD CARD HOVER
+========================================================= */
+
+.food-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #e3a3bd !important;
+
+  box-shadow:
+    0 10px 25px rgba(91, 62, 100, 0.12) !important;
+}
+
+.food-card:active {
+  transform: scale(0.98);
 }
 
 .back {
@@ -572,6 +780,11 @@ button {
 
   font-weight: normal;
 }
+
+
+/* =========================================================
+   FOOD GRID
+========================================================= */
 
 .food-grid {
   display: grid;
@@ -897,6 +1110,9 @@ button {
 /* =========================================================
    DESKTOP
    1200px AND ABOVE
+
+   ALL MAIN SCREENS:
+   padding: 90px 45px 45px
 ========================================================= */
 
 @media (min-width: 1200px) {
@@ -914,11 +1130,21 @@ button {
   }
 
 
-  /* Home becomes website-style */
+  /* =======================================================
+     SAME PADDING FOR HOME / ANNIVERSARY / MEMORY / PHOTOS
+  ======================================================= */
 
-  .home-screen {
-    padding: 60px;
+  .home-screen,
+  .anniversary-screen,
+  .memory-screen,
+  .photos-screen {
+    padding: 90px 45px 45px;
   }
+
+
+  /* =======================================================
+     HOME
+  ======================================================= */
 
   .home-art {
     max-width: 900px;
@@ -944,11 +1170,9 @@ button {
   }
 
 
-  /* Anniversary cards become wider */
-
-  .anniversary-screen {
-    padding: 50px 70px;
-  }
+  /* =======================================================
+     ANNIVERSARY
+  ======================================================= */
 
   .anniversary-list {
     grid-template-columns: repeat(3, 1fr);
@@ -959,10 +1183,12 @@ button {
   }
 
 
-  /* Food */
+  /* =======================================================
+     MEMORY / FOOD
+  ======================================================= */
 
   .memory-content {
-    padding: 45px 70px;
+    padding: 30px 0;
   }
 
   .food-grid {
@@ -970,11 +1196,9 @@ button {
   }
 
 
-  /* Photos */
-
-  .photos-screen {
-    padding: 50px 70px;
-  }
+  /* =======================================================
+     PHOTOS
+  ======================================================= */
 
   .photo-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -985,7 +1209,9 @@ button {
   }
 
 
-  /* Desktop navigation */
+  /* =======================================================
+     DESKTOP NAVIGATION
+  ======================================================= */
 
   .bottom-nav {
     top: 0;
@@ -1019,13 +1245,6 @@ button {
   .nav-label {
     font-size: 13px;
   }
-
-  .home-screen,
-  .anniversary-screen,
-  .memory-screen,
-  .photos-screen {
-    padding-top: 100px;
-  }
 }
 
 
@@ -1035,6 +1254,18 @@ button {
 ========================================================= */
 
 @media (min-width: 769px) and (max-width: 1199px) {
+
+    /* =======================================================
+     MEMORY HEADER + SEARCH
+  ======================================================= */
+
+  .memory-header-row {
+    gap: 20px;
+  }
+
+  .food-search {
+    width: 280px;
+  }
 
   .page {
     padding: 30px;
@@ -1049,18 +1280,30 @@ button {
   }
 
 
-  .home-screen {
-    padding: 45px;
+  /* =======================================================
+     MAIN SCREEN PADDING
+  ======================================================= */
+
+  .home-screen,
+  .anniversary-screen,
+  .memory-screen,
+  .photos-screen {
+    padding: 90px 45px 45px;
   }
+
+
+  /* =======================================================
+     HOME
+  ======================================================= */
 
   .home-art {
     max-width: 700px;
   }
 
 
-  .anniversary-screen {
-    padding: 45px;
-  }
+  /* =======================================================
+     ANNIVERSARY
+  ======================================================= */
 
   .anniversary-list {
     grid-template-columns: repeat(3, 1fr);
@@ -1071,8 +1314,12 @@ button {
   }
 
 
+  /* =======================================================
+     MEMORY
+  ======================================================= */
+
   .memory-content {
-    padding: 40px;
+    padding: 30px 0;
   }
 
   .food-grid {
@@ -1080,9 +1327,9 @@ button {
   }
 
 
-  .photos-screen {
-    padding: 45px;
-  }
+  /* =======================================================
+     PHOTOS
+  ======================================================= */
 
   .photo-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -1093,7 +1340,9 @@ button {
   }
 
 
-  /* Website-like navigation */
+  /* =======================================================
+     WEBSITE-LIKE NAVIGATION
+  ======================================================= */
 
   .bottom-nav {
     top: 0;
@@ -1125,13 +1374,6 @@ button {
   .nav-label {
     font-size: 12px;
   }
-
-  .home-screen,
-  .anniversary-screen,
-  .memory-screen,
-  .photos-screen {
-    padding-top: 90px;
-  }
 }
 
 
@@ -1141,6 +1383,30 @@ button {
 ========================================================= */
 
 @media (min-width: 481px) and (max-width: 768px) {
+
+    /* =======================================================
+     MEMORY HEADER + SEARCH
+  ======================================================= */
+
+  .memory-header-row {
+    flex-direction: column !important;
+
+    align-items: stretch !important;
+
+    gap: 10px;
+  }
+
+  .memory-header {
+    padding-bottom: 10px;
+  }
+
+  .food-search {
+    width: 100%;
+  }
+
+  .food-search input {
+    width: 100%;
+  }
 
   .page {
     padding: 20px;
@@ -1159,10 +1425,18 @@ button {
   }
 
 
+  /* =======================================================
+     HOME
+  ======================================================= */
+
   .home-screen {
     padding: 35px 25px;
   }
 
+
+  /* =======================================================
+     ANNIVERSARY
+  ======================================================= */
 
   .anniversary-screen {
     padding: 35px 25px;
@@ -1173,10 +1447,18 @@ button {
   }
 
 
+  /* =======================================================
+     MEMORY
+  ======================================================= */
+
   .memory-content {
-    padding: 30px 25px;
+    padding: 35px 25px;
   }
 
+
+  /* =======================================================
+     PHOTOS
+  ======================================================= */
 
   .photos-screen {
     padding: 35px 25px;
@@ -1187,6 +1469,10 @@ button {
   }
 
 
+  /* =======================================================
+     NAVIGATION
+  ======================================================= */
+
   .bottom-nav {
     height: 75px;
   }
@@ -1194,11 +1480,124 @@ button {
 
 
 /* =========================================================
-   app-container
+   MOBILE
    480px AND BELOW
 ========================================================= */
 
 @media (max-width: 480px) {
+
+    /* =======================================================
+     MEMORY HEADER + SEARCH
+  ======================================================= */
+
+  .memory-header-row {
+    width: 100%;
+
+    flex-direction: column !important;
+
+    align-items: stretch !important;
+
+    justify-content: flex-start !important;
+
+    gap: 12px !important;
+
+    margin-bottom: 10px !important;
+  }
+
+  .memory-header {
+    width: 100%;
+
+    padding: 0px;
+  }
+
+  .memory-header h2 {
+    font-size: 27px;
+  }
+
+  .memory-header .intro {
+    margin-top: 12px;
+    margin-bottom: 5px;
+  }
+
+
+  .food-search {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px;
+
+    padding: 0px;
+
+    box-sizing: border-box;
+  }
+
+  .food-search input {
+    width: 100%;
+  }
+
+
+  /* =======================================================
+     SEARCH RESULTS
+  ======================================================= */
+
+  .search-results {
+    margin:
+      15px
+      20px
+      20px !important;
+
+    width: calc(100% - 40px);
+
+    padding: 14px !important;
+
+    border-radius: 17px !important;
+  }
+
+  .search-results h3 {
+    font-size: 17px !important;
+  }
+
+
+  /* =======================================================
+     SEARCH RESULT ITEMS
+  ======================================================= */
+
+  .search-results button {
+    gap: 8px !important;
+
+    padding:
+      11px
+      4px !important;
+  }
+
+  .search-results button > div:first-child {
+    min-width: 0;
+
+    gap: 8px !important;
+  }
+
+  .search-results button > div:first-child > span {
+    font-size: 23px !important;
+  }
+
+  .search-results strong {
+    font-size: 13px !important;
+
+    white-space: normal;
+  }
+
+  .search-results small {
+    font-size: 10px !important;
+  }
+
+  .search-results button > span:last-child {
+    flex-shrink: 0;
+
+    padding:
+      6px
+      8px !important;
+
+    font-size: 9px !important;
+  }
 
   html,
   body,
@@ -1211,8 +1610,13 @@ button {
   }
 
 
+  /* =======================================================
+     PAGE
+  ======================================================= */
+
   .page {
     width: 100vw;
+
     min-height: 100vh;
 
     padding: 0;
@@ -1221,7 +1625,9 @@ button {
   }
 
 
-  /* Phone becomes app */
+  /* =======================================================
+     APP CONTAINER
+  ======================================================= */
 
   .app-container {
     width: 100vw;
@@ -1238,7 +1644,9 @@ button {
   }
 
 
-  /* Home */
+  /* =======================================================
+     HOME
+  ======================================================= */
 
   .home-screen {
     min-height: 100vh;
@@ -1296,7 +1704,9 @@ button {
   }
 
 
-  /* Anniversary */
+  /* =======================================================
+     ANNIVERSARY
+  ======================================================= */
 
   .anniversary-screen {
     min-height: 100vh;
@@ -1318,7 +1728,9 @@ button {
   }
 
 
-  /* Food */
+  /* =======================================================
+     MEMORY / FOOD
+  ======================================================= */
 
   .memory-screen {
     min-height: 100vh;
@@ -1351,7 +1763,9 @@ button {
   }
 
 
-  /* Photos */
+  /* =======================================================
+     PHOTOS
+  ======================================================= */
 
   .photos-screen {
     min-height: 100vh;
@@ -1375,7 +1789,9 @@ button {
   }
 
 
-  /* Bottom app navigation */
+  /* =======================================================
+     BOTTOM APP NAVIGATION
+  ======================================================= */
 
   .bottom-nav {
     position: fixed;
@@ -1406,7 +1822,9 @@ button {
   }
 
 
-  /* Modal */
+  /* =======================================================
+     MODAL
+  ======================================================= */
 
   .modal-overlay {
     padding: 15px;
@@ -1436,6 +1854,52 @@ button {
 ========================================================= */
 
 @media (max-width: 360px) {
+
+    /* =======================================================
+     VERY SMALL PHONE - FOOD SEARCH
+  ======================================================= */
+
+  .memory-header {
+    padding:
+      25px
+      15px
+      5px;
+  }
+
+  .memory-header h2 {
+    font-size: 24px;
+  }
+
+  .memory-header .intro {
+    font-size: 13px;
+  }
+
+  .food-search {
+    padding:
+      0
+      15px;
+  }
+
+  .food-search input {
+    min-height: 44px;
+
+    padding:
+      11px
+      38px;
+
+    font-size: 12px;
+  }
+
+  .search-results {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+
+    width: calc(100% - 30px);
+  }
+
+  .search-results button > span:last-child {
+    display: none;
+  }
 
   .home-screen {
     padding-left: 15px;

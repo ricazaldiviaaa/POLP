@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import "./App.css";
 
+// =========================================================
+// PAGES
+// =========================================================
+
 import HomeScreen from "./pages/HomeScreen";
+import MemoryScreen from "./pages/MemoryScreen";
+import AnniversaryScreen from "./pages/AnniversaryScreen";
+import PhotosScreen from "./pages/PhotosScreen";
+import AnniversaryModal from "./pages/AnniversaryModal";
+
+// =========================================================
+// COMPONENTS
+// =========================================================
+
 import BottomNav from "./components/BottomNav";
 
 
@@ -34,349 +47,33 @@ const anniversaryMessages = {
 
 
 // =========================================================
-// ANNIVERSARY SCREEN
-// =========================================================
-
-function AnniversaryScreen({ onSelect }) {
-
-  const cards = [
-    {
-      year: 1,
-      icon: "💌",
-      description:
-        "The beginning of our forever. A year filled with first memories, first adventures and endless love.",
-    },
-
-    {
-      year: 2,
-      icon: "💕",
-      description:
-        "Two years, countless memories, and somehow I still fall for you every single day.",
-    },
-
-    {
-      year: 3,
-      icon: "💖",
-      description:
-        "Three beautiful years together. Still my favorite person, favorite place and favorite story.",
-    },
-  ];
-
-
-  return (
-    <section className="anniversary-screen">
-
-      <div className="topbar">
-
-        <h2>
-          Our Memories ♡
-        </h2>
-
-        <div className="search-icon">
-          ⌕
-        </div>
-
-      </div>
-
-
-      <p className="intro">
-        Little letters from the chapters
-        we've written together.
-      </p>
-
-
-      <div className="anniversary-list">
-
-        {cards.map((card) => (
-
-          <button
-            key={card.year}
-            className="anniversary-card"
-            onClick={() => onSelect(card.year)}
-          >
-
-            <div className="anniversary-number">
-              Chapter{" "}
-              {String(card.year).padStart(2, "0")}
-            </div>
-
-
-            <div className="anniversary-icon">
-              {card.icon}
-            </div>
-
-
-            <div className="anniversary-info">
-
-              <h3>
-                {anniversaryMessages[card.year].title}
-              </h3>
-
-              <p>
-                {card.description}
-              </p>
-
-            </div>
-
-          </button>
-
-        ))}
-
-      </div>
-
-    </section>
-  );
-}
-
-
-// =========================================================
-// FOOD / LITTLE MOMENTS SCREEN
-// =========================================================
-
-function MemoryScreen() {
-
-  const foods = [
-    {
-      emoji: "🍕",
-      title: "Pizza Nights",
-    },
-
-    {
-      emoji: "🍰",
-      title: "Dessert Dates",
-    },
-
-    {
-      emoji: "☕",
-      title: "Coffee Together",
-    },
-
-    {
-      emoji: "🍜",
-      title: "Late Night Food",
-    },
-  ];
-
-
-  return (
-    <section className="memory-screen">
-
-      <div className="memory-header">
-
-        <div className="back">
-          ←
-        </div>
-
-
-        <div className="memory-title">
-
-          <small>
-            Our favorite things
-          </small>
-
-          <h2>
-            Little Moments ♡
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div className="memory-content">
-
-        <h3>
-          Our Favorite Dates
-        </h3>
-
-
-        <div className="food-grid">
-
-          {foods.map((food) => (
-
-            <div
-              className="food-card"
-              key={food.title}
-            >
-
-              <div className="food-emoji">
-                {food.emoji}
-              </div>
-
-              <span>
-                {food.title}
-              </span>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </div>
-
-    </section>
-  );
-}
-
-
-// =========================================================
-// PHOTOS SCREEN
-// =========================================================
-
-function PhotosScreen() {
-
-  return (
-    <section className="photos-screen">
-
-      <div className="photos-header">
-
-        <small>
-          OUR STORY
-        </small>
-
-        <h2>
-          Favorite Photos ♡
-        </h2>
-
-      </div>
-
-
-      <div className="photo-grid">
-
-        <div className="photo-placeholder photo-one">
-          ♡
-        </div>
-
-        <div className="photo-placeholder photo-two">
-          ♡
-        </div>
-
-        <div className="photo-placeholder photo-three">
-          ♡
-        </div>
-
-        <div className="photo-placeholder photo-four">
-          ♡
-        </div>
-
-      </div>
-
-    </section>
-  );
-}
-
-
-// =========================================================
-// ANNIVERSARY MESSAGE MODAL
-// =========================================================
-
-function AnniversaryModal({
-  selectedYear,
-  onClose,
-}) {
-
-  if (!selectedYear) {
-    return null;
-  }
-
-
-  const message =
-    anniversaryMessages[selectedYear];
-
-
-  return (
-    <div
-      className="modal-overlay"
-      onClick={onClose}
-    >
-
-      <div
-        className="message-modal"
-        onClick={(event) => event.stopPropagation()}
-      >
-
-        <button
-          type="button"
-          className="close-button"
-          onClick={onClose}
-          aria-label="Close"
-        >
-          ×
-        </button>
-
-
-        <div className="modal-heart">
-          {message.icon}
-        </div>
-
-
-        <small>
-          OUR CHAPTER
-        </small>
-
-
-        <h2>
-          {message.title}
-        </h2>
-
-
-        <p>
-          {message.text}
-        </p>
-
-
-        <div className="modal-signature">
-          Always us. ♡
-        </div>
-
-      </div>
-
-    </div>
-  );
-}
-
-
-// =========================================================
 // MAIN APP
 // =========================================================
 
 function App() {
 
   /*
-    HOME IS THE FIRST PAGE.
-
-    When the website/app opens:
-
-        active = "home"
-
-    So HomeScreen will be displayed first.
+    The first screen shown when the app opens.
   */
 
   const [active, setActive] = useState("home");
 
 
   /*
-    Stores the anniversary card that
-    the user clicked.
+    Stores the anniversary year selected
+    by the user.
   */
 
   const [selectedYear, setSelectedYear] =
     useState(null);
 
-
-  // =======================================================
-  // SELECT ANNIVERSARY
-  // =======================================================
+  // OPEN ANNIVERSARY MESSAGE
 
   const showMessage = (year) => {
     setSelectedYear(year);
   };
 
-
-  // =======================================================
-  // CLOSE ANNIVERSARY MODAL
-  // =======================================================
+  // CLOSE ANNIVERSARY MESSAGE
 
   const closeModal = () => {
     setSelectedYear(null);
@@ -387,17 +84,11 @@ function App() {
 
     <main className="page">
 
-      {/* =================================================
-          MAIN APPLICATION CONTAINER
-      ================================================= */}
-
       <div className="app-container">
 
 
-        {/* ================================================
+        {/* =================================================
             HOME
-
-            This is the FIRST page.
         ================================================= */}
 
         {active === "home" && (
@@ -409,7 +100,7 @@ function App() {
         )}
 
 
-        {/* ================================================
+        {/* =================================================
             ANNIVERSARIES
         ================================================= */}
 
@@ -422,8 +113,8 @@ function App() {
         )}
 
 
-        {/* ================================================
-            FOOD / LITTLE MOMENTS
+        {/* =================================================
+            FOOD / CKD GUIDE
         ================================================= */}
 
         {active === "food" && (
@@ -433,7 +124,7 @@ function App() {
         )}
 
 
-        {/* ================================================
+        {/* =================================================
             PHOTOS
         ================================================= */}
 
@@ -444,12 +135,8 @@ function App() {
         )}
 
 
-        {/* ================================================
+        {/* =================================================
             BOTTOM NAVIGATION
-
-            Imported from:
-
-            components/BottomNav.js
         ================================================= */}
 
         <BottomNav
@@ -467,9 +154,11 @@ function App() {
       <AnniversaryModal
         selectedYear={selectedYear}
         onClose={closeModal}
+        anniversaryMessages={anniversaryMessages}
       />
 
     </main>
+
   );
 }
 
