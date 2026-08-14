@@ -60,18 +60,6 @@
     left: 19px;
   }
 
-
-  /*ANNIVERSARY*/
-
-  .anniversary-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .anniversary-card {
-    min-height: 250px;
-  }
-
-
   /*MEMORY / FOOD*/
 
   .memory-content {
@@ -377,7 +365,7 @@
 
     justify-content: flex-start !important;
 
-    gap: 12px !important;
+    gap: 0px !important;
 
   }
 
@@ -397,13 +385,14 @@
   }
 
 
-  .food-search {
-    width: 100%;
-    max-width: 100%;
-    padding: 0px;
-
-    box-sizing: border-box;
-  }
+.food-search {
+  width: calc(100% - 40px);
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
 
   .food-search input {
     width: 100%;
@@ -411,15 +400,12 @@
 
 
   /*SEARCH RESULTS*/
-  .search-results {
-    margin:
-      15px
-      20px
-      20px !important;
-
-    width: calc(100% - 40px);
-    border-radius: 17px !important;
-  }
+.search-results {
+  width: calc(100% - 40px);
+  max-width: 100%;
+  margin: 12px auto 20px;
+  box-sizing: border-box;
+}
 
   .search-results h3 {
     font-size: 17px !important;
@@ -563,28 +549,15 @@
     padding: 14px 25px;
   }
 
-
-  /*ANNIVERSARY*/
-
-  .anniversary-screen {
+  /* ANNIVERSARY*/
+    .anniversary-screen {
     min-height: 100vh;
 
     padding:
-      35px
+      40px
       20px
       110px;
   }
-
-  .topbar h2 {
-    font-size: 25px;
-  }
-
-  .anniversary-card {
-    min-height: auto;
-
-    padding: 18px;
-  }
-
 
   /*MEMORY / FOOD*/
 

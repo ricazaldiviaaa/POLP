@@ -6,11 +6,15 @@
   width: 100%;
   height: 100%;
 
-  padding: 40px 30px;
-
   overflow-y: auto;
 
-  background: #faf5fb;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fbff 55%,
+      #eef8ff 100%
+    );
 }
 
 .anniversary-screen::-webkit-scrollbar {
@@ -23,54 +27,401 @@
 ========================================================= */
 
 .topbar {
+  width: 100%;
+
   display: flex;
 
-  align-items: center;
+  align-items: flex-start;
 
   justify-content: space-between;
 
-  gap: 20px;
+  gap: 16px;
+
+  padding: 0;
 }
+
+
+/* =========================================================
+   HEADER TEXT
+========================================================= */
+
+.topbar-text {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 .topbar h2 {
   margin: 0;
 
-  color: #5d4665;
+  padding: 0;
+
+  color: #9b1d1d;
+
+  font-family: 'Poppins', sans-serif;
 
   font-size: 28px;
 
-  font-weight: normal;
+  line-height: 42px;
+
+  font-weight: 700;
 }
 
-.search-icon {
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.intro {
+  max-width: 500px;
+
+  margin: 5px 0 0;
+
+  padding: 0;
+
+  color: #665c5c;
+
+  font-family: 'Nunito', sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   TOPBAR ACTIONS
+========================================================= */
+
+.topbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   FAVORITE / SAVE HEADER BUTTONS
+========================================================= */
+
+.collection-button {
   width: 42px;
   height: 42px;
 
   flex-shrink: 0;
 
   display: flex;
-  justify-content: center;
+
   align-items: center;
+  justify-content: center;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 1px solid #afd9ff;
 
   border-radius: 50%;
 
-  background: #eee1f2;
+  background: #eef8ff;
 
-  color: #735578;
+  color: #9b1d1d;
 
-  font-size: 23px;
+  font-size: 18px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.intro {
-  max-width: 600px;
+.collection-button:hover {
+  background: #afd9ff;
 
-  margin: 15px 0 30px;
+  transform: scale(1.05);
+}
 
-  color: #88768b;
+.collection-button.collection-active {
+  background: #afd9ff;
 
-  font-size: 14px;
+  border-color: #8fc8f5;
 
-  line-height: 1.7;
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   FAVORITES / SAVED PANEL
+========================================================= */
+
+.collection-panel {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 18px;
+
+  border: 1px solid #dcecf8;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 25px rgba(63, 48, 48, 0.08);
+
+  animation: collectionFlash 0.25s ease-out;
+}
+
+
+/* =========================================================
+   COLLECTION PANEL HEADER
+========================================================= */
+
+.collection-panel-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 14px;
+}
+
+.collection-panel-header h3 {
+  margin: 0;
+
+  color: #9b1d1d;
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+.collection-panel-header p {
+  margin: 3px 0 0;
+
+  color: #665c5c;
+
+  font-family: 'Nunito', sans-serif;
+
+  font-size: 11px;
+}
+
+.collection-panel-header > span {
+  min-width: 25px;
+  height: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef8ff;
+
+  color: #6faedc;
+
+  font-family: 'Nunito', sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   COLLECTION EMPTY
+========================================================= */
+
+.collection-empty {
+  padding: 18px;
+
+  border-radius: 16px;
+
+  background: #f8fbff;
+
+  text-align: center;
+}
+
+.collection-empty-icon {
+  margin-bottom: 7px;
+
+  font-size: 25px;
+}
+
+.collection-empty p {
+  margin: 0;
+
+  color: #665c5c;
+
+  font-family: 'Nunito', sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.collection-empty small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #9a8989;
+
+  font-family: 'Nunito', sans-serif;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   COLLECTION LIST
+========================================================= */
+
+.collection-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   COLLECTION ITEM
+========================================================= */
+
+.collection-item {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  margin: 0;
+
+  padding: 10px;
+
+  border: 1px solid #dcecf8;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.collection-item:hover {
+  background: #f8fbff;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   COLLECTION ITEM ICON
+========================================================= */
+
+.collection-item-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  margin-right: 10px;
+
+  font-size: 20px;
+}
+
+.collection-item-icon img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   COLLECTION ITEM INFO
+========================================================= */
+
+.collection-item-info {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.collection-item-info strong {
+  color: #9b1d1d;
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: 12px;
+}
+
+.collection-item-info small {
+  color: #665c5c;
+
+  font-family: 'Nunito', sans-serif;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   COLLECTION ITEM ACTION ICON
+========================================================= */
+
+.collection-item-action {
+  flex-shrink: 0;
+
+  font-size: 17px;
 }
 
 
@@ -79,79 +430,550 @@
 ========================================================= */
 
 .anniversary-list {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns: 1fr;
 
   gap: 18px;
+
+  margin-top: 30px;
 }
 
+
+/* =========================================================
+   ANNIVERSARY CARD
+========================================================= */
+
 .anniversary-card {
+  position: relative;
+
   width: 100%;
 
   min-height: 145px;
 
-  padding: 22px;
+  padding: 22px 70px 22px 26px;
 
-  border: none;
+  border: 1px solid #dcecf8;
 
   border-radius: 24px;
 
-  background: white;
+  background: #ffffff;
 
   text-align: left;
 
   cursor: pointer;
 
   box-shadow:
-    0 8px 25px rgba(91, 62, 100, 0.08);
+    0 8px 25px rgba(63, 48, 48, 0.08);
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
 
 .anniversary-card:hover {
   transform: translateY(-4px);
 
+  border-color: #afd9ff;
+
   box-shadow:
-    0 15px 30px rgba(91, 62, 100, 0.13);
+    0 15px 30px rgba(63, 48, 48, 0.13);
 }
+
+
+/* =========================================================
+   CRIMSON CARD ACCENT
+========================================================= */
+
+.anniversary-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 22px;
+  bottom: 22px;
+
+  width: 4px;
+
+  border-radius: 0 8px 8px 0;
+
+  background: #9b1d1d;
+}
+
+
+/* =========================================================
+   CHAPTER NUMBER
+========================================================= */
 
 .anniversary-number {
   margin-bottom: 12px;
 
-  color: #ac8bae;
+  color: #6faedc;
+
+  font-family: 'Nunito', sans-serif;
 
   font-size: 10px;
 
   letter-spacing: 2px;
 
   text-transform: uppercase;
+
+  font-weight: 700;
 }
+
+
+/* =========================================================
+   ANNIVERSARY ICON
+========================================================= */
 
 .anniversary-icon {
   float: left;
 
+  width: 60px;
+  height: 60px;
+
   margin-right: 15px;
 
-  font-size: 38px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
 }
+
+.anniversary-icon img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   ANNIVERSARY TITLE
+========================================================= */
 
 .anniversary-info h3 {
   margin: 0 0 8px;
 
-  color: #614969;
+  color: #9b1d1d;
+
+  font-family: 'Poppins', sans-serif;
 
   font-size: 19px;
+
+  font-weight: 600;
 }
+
+
+/* =========================================================
+   ANNIVERSARY DESCRIPTION
+========================================================= */
 
 .anniversary-info p {
   margin: 0;
 
-  color: #88778c;
+  color: #665c5c;
+
+  font-family: 'Nunito', sans-serif;
 
   font-size: 13px;
 
   line-height: 1.6;
+}
+
+
+/* =========================================================
+   RIGHT SIDE CARD ACTIONS
+========================================================= */
+
+.anniversary-actions {
+  position: absolute;
+
+  top: 50%;
+  right: 14px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 6px;
+
+  transform: translateY(-50%);
+}
+
+
+/* =========================================================
+   CARD FAVORITE / SAVE BUTTON
+========================================================= */
+
+.memory-action {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #b79da5;
+
+  font-size: 19px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.memory-action:hover {
+  transform: scale(1.15);
+
+  background: #f8fbff;
+}
+
+.memory-action.is-favorite {
+  color: #9b1d1d;
+}
+
+.memory-action.is-saved {
+  color: #6faedc;
+}
+
+
+/* =========================================================
+   COLLECTION FLASH
+========================================================= */
+
+@keyframes collectionFlash {
+
+  0% {
+    opacity: 0;
+
+    transform: translateY(-6px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 748px) {
+
+  .anniversary-screen {
+    padding: 30px 22px;
+  }
+
+
+  /* -----------------------------------------
+     HEADER
+  ----------------------------------------- */
+
+  .topbar {
+    gap: 12px;
+  }
+
+  .topbar h2 {
+    font-size: 25px;
+
+    line-height: 40px;
+  }
+
+  .intro {
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+
+  /* -----------------------------------------
+     HEADER ACTIONS
+  ----------------------------------------- */
+
+  .topbar-actions {
+    gap: 5px;
+  }
+
+
+  .collection-button {
+    width: 40px;
+    height: 40px;
+
+    font-size: 17px;
+  }
+
+
+  /* -----------------------------------------
+     COLLECTION PANEL
+  ----------------------------------------- */
+
+  .collection-panel {
+    margin-top: 17px;
+
+    padding: 15px;
+
+    border-radius: 20px;
+  }
+
+  .collection-panel-header h3 {
+    font-size: 16px;
+  }
+
+
+  /* -----------------------------------------
+     ANNIVERSARY LIST
+  ----------------------------------------- */
+
+  .anniversary-list {
+    margin-top: 25px;
+
+    gap: 15px;
+  }
+
+
+  /* -----------------------------------------
+     ANNIVERSARY CARD
+  ----------------------------------------- */
+
+  .anniversary-card {
+    min-height: 140px;
+    padding: 20px 62px 20px 24px;
+    border-radius: 20px;
+  }
+
+
+  /* -----------------------------------------
+     CARD ICON
+  ----------------------------------------- */
+
+  .anniversary-icon {
+    width: 54px;
+    height: 54px;
+
+    margin-right: 13px;
+
+    border-radius: 16px;
+
+    font-size: 29px;
+  }
+
+
+  /* -----------------------------------------
+     CARD TITLE
+  ----------------------------------------- */
+
+  .anniversary-info h3 {
+    font-size: 14px;
+  }
+
+
+  /* -----------------------------------------
+     CARD DESCRIPTION
+  ----------------------------------------- */
+
+  .anniversary-info p {
+    font-size: 8px;
+    align-text: justify;
+  }
+
+
+  /* -----------------------------------------
+     CARD ACTIONS
+  ----------------------------------------- */
+
+  .anniversary-actions {
+    right: 9px;
+
+    gap: 4px;
+  }
+
+  .memory-action {
+    width: 28px;
+    height: 28px;
+
+    font-size: 17px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 300px) {
+
+  .anniversary-screen {
+    padding: 25px 16px;
+  }
+
+
+  /* -----------------------------------------
+     HEADER
+  ----------------------------------------- */
+
+  .topbar {
+    gap: 8px;
+  }
+
+  .topbar h2 {
+    font-size: 22px;
+
+    line-height: 36px;
+  }
+
+  .intro {
+    font-size: 12px;
+  }
+
+
+  /* -----------------------------------------
+     HEADER ACTIONS
+  ----------------------------------------- */
+
+  .topbar-actions {
+    gap: 3px;
+  }
+
+  .collection-button {
+    font-size: 15px;
+  }
+
+
+  /* -----------------------------------------
+     COLLECTION PANEL
+  ----------------------------------------- */
+
+  .collection-panel {
+    padding: 12px;
+  }
+
+  .collection-panel-header h3 {
+    font-size: 14px;
+  }
+
+  .collection-panel-header p {
+    font-size: 9px;
+  }
+
+
+  /* -----------------------------------------
+     ANNIVERSARY CARD
+  ----------------------------------------- */
+
+  .anniversary-card {
+    min-height: 135px;
+    padding: 18px 54px 18px 22px;
+  }
+
+
+  /* -----------------------------------------
+     CARD ICON
+  ----------------------------------------- */
+
+  .anniversary-icon {
+    width: 48px;
+    height: 48px;
+
+    margin-right: 11px;
+
+    font-size: 25px;
+  }
+
+
+  /* -----------------------------------------
+     CARD TITLE
+  ----------------------------------------- */
+
+  .anniversary-info h3 {
+    font-size: 16px;
+  }
+
+
+  /* -----------------------------------------
+     CARD DESCRIPTION
+  ----------------------------------------- */
+
+  .anniversary-info p {
+    font-size: 11.5px;
+  }
+
+
+  /* -----------------------------------------
+     CARD ACTIONS
+  ----------------------------------------- */
+
+  .anniversary-actions {
+    right: 7px;
+  }
+
+  .memory-action {
+    width: 25px;
+    height: 25px;
+
+    font-size: 15px;
+  }
+
+
+  /* -----------------------------------------
+     COLLECTION ITEMS
+  ----------------------------------------- */
+
+  .collection-item {
+    padding: 8px;
+  }
+
+  .collection-item-icon {
+    width: 34px;
+    height: 34px;
+
+    margin-right: 8px;
+
+    font-size: 18px;
+  }
+
+  .collection-item-info strong {
+    font-size: 11px;
+  }
+
+  .collection-item-info small {
+    font-size: 9px;
+  }
+
 }
