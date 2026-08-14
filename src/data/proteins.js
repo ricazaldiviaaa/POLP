@@ -1,5 +1,7 @@
+import prtn from "../assets/pro.jpg";
+
 const proteins = {
-  emoji: "🐔",
+  emoji: prtn,
   title: "Proteins",
 
   choose: [

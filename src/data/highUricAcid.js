@@ -1,5 +1,7 @@
+import hu from "../assets/hu.jpg";
+
 const highUricAcid = {
-  emoji: "💚",
+  emoji: hu,
   title: "High Uric Acid",
 
   choose: [

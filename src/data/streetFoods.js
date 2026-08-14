@@ -1,5 +1,7 @@
+import strtf from "../assets/sf.jpg";
+
 const streetFoods = {
-  emoji: "🍢",
+  emoji: strtf,
   title: "Street Foods",
 
   choose: [

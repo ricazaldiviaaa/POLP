@@ -1,6 +1,8 @@
+import dnn from "../assets/dinner.jpg";
+
 const dinner = {
-  emoji: "🍲",
-  title: "Filipino Dinner",
+  emoji: dnn,
+  title: "Dinner",
 
   choose: [
     "Chicken nilaga + cabbage + rice",

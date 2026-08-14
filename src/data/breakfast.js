@@ -1,6 +1,8 @@
+import bf from "../assets/bf.jpg";
+
 const breakfast = {
-  emoji: "🍳",
-  title: "Filipino Breakfast",
+  emoji: bf,
+  title: "Breakfast",
 
   choose: [
     "Plain rice + boiled egg",

@@ -1,4 +1,6 @@
 import React from "react";
+import "../css/AnniversaryModal.css";
+import "./../css/Responsive.css";
 
 function AnniversaryScreen({ onSelect }) {
 

@@ -1,49 +1,66 @@
 import React from "react";
-
+import "../css/AnniversaryModal.css";
+import "./../css/Responsive.css";
 
 function HomeScreen({ setActive }) {
   return (
     <section className="home-screen">
+
       <div className="home-art">
 
-        {/* Decorative hearts */}
+        {/* =================================================
+            DECORATIVE HEARTS
+        ================================================= */}
+
         <div className="tiny-heart heart-one">♡</div>
         <div className="tiny-heart heart-two">♡</div>
         <div className="tiny-heart heart-three">♡</div>
         <div className="tiny-heart heart-four">♡</div>
 
-        {/* ================================
+
+        {/* =================================================
             COUPLE ILLUSTRATION
-        ================================= */}
+        ================================================= */}
 
         <div className="couple-drawing">
 
-          {/* Left person */}
+          {/* LEFT PERSON */}
           <div className="person person-left">
+
             <div className="person-head left-head"></div>
+
             <div className="person-body left-body"></div>
+
           </div>
 
-          {/* Right person */}
+
+          {/* RIGHT PERSON */}
           <div className="person person-right">
+
             <div className="person-head right-head"></div>
+
             <div className="person-body right-body"></div>
+
           </div>
 
-          {/* Heart between them */}
+
+          {/* HEART BETWEEN THEM */}
           <div className="holding-heart">
             ♥
           </div>
 
         </div>
 
-        {/* ================================
-            TEXT
-        ================================= */}
+
+        {/* =================================================
+            HOME TEXT
+        ================================================= */}
 
         <div className="home-text">
 
-          <small>OUR LITTLE UNIVERSE</small>
+          <small>
+            OUR LITTLE UNIVERSE
+          </small>
 
           <h1>
             Just Us
@@ -58,22 +75,28 @@ function HomeScreen({ setActive }) {
 
         </div>
 
-        {/* ================================
-            BUTTON
-        ================================= */}
+
+        {/* =================================================
+            OPEN OUR STORY BUTTON
+        ================================================= */}
 
         <button
           className="start-button"
-          onClick={() => setActive("search")}
+          onClick={() => setActive("anniversary")}
         >
-          <span>Open Our Story</span>
+
+          <span>
+            Open Our Story
+          </span>
 
           <span className="button-heart">
             ♡
           </span>
+
         </button>
 
       </div>
+
     </section>
   );
 }

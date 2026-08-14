@@ -1,5 +1,7 @@
+import grn from "../assets/grains.jpg";
+
 const grains = {
-  emoji: "🍚",
+  emoji: grn,
   title: "Grains",
 
   choose: [

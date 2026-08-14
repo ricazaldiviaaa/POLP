@@ -1,5 +1,7 @@
+import hrbs from "../assets/herb.jpg";
+
 const herbsSpices = {
-  emoji: "🌿",
+  emoji: hrbs,
   title: "Herbs & Spices",
 
   choose: [

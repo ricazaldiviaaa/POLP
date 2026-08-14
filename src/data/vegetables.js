@@ -1,5 +1,7 @@
+import vgtbl from "../assets/vege.jpg";
+
 const vegetables = {
-  emoji: "🥕",
+  emoji: vgtbl,
   title: "Vegetables",
 
   choose: [
@@ -10,6 +12,7 @@ const vegetables = {
     "Green beans",
     "Bell pepper",
     "Onion",
+    
     "Carrot",
     "Eggplant",
     "Radish",

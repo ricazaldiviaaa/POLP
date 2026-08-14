@@ -1,0 +1,157 @@
+/* =========================================================
+   ANNIVERSARY SCREEN
+========================================================= */
+
+.anniversary-screen {
+  width: 100%;
+  height: 100%;
+
+  padding: 40px 30px;
+
+  overflow-y: auto;
+
+  background: #faf5fb;
+}
+
+.anniversary-screen::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   ANNIVERSARY HEADER
+========================================================= */
+
+.topbar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.topbar h2 {
+  margin: 0;
+
+  color: #5d4665;
+
+  font-size: 28px;
+
+  font-weight: normal;
+}
+
+.search-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #eee1f2;
+
+  color: #735578;
+
+  font-size: 23px;
+}
+
+.intro {
+  max-width: 600px;
+
+  margin: 15px 0 30px;
+
+  color: #88768b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ANNIVERSARY CARDS
+========================================================= */
+
+.anniversary-list {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 18px;
+}
+
+.anniversary-card {
+  width: 100%;
+
+  min-height: 145px;
+
+  padding: 22px;
+
+  border: none;
+
+  border-radius: 24px;
+
+  background: white;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(91, 62, 100, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.anniversary-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 30px rgba(91, 62, 100, 0.13);
+}
+
+.anniversary-number {
+  margin-bottom: 12px;
+
+  color: #ac8bae;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.anniversary-icon {
+  float: left;
+
+  margin-right: 15px;
+
+  font-size: 38px;
+}
+
+.anniversary-info h3 {
+  margin: 0 0 8px;
+
+  color: #614969;
+
+  font-size: 19px;
+}
+
+.anniversary-info p {
+  margin: 0;
+
+  color: #88778c;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}

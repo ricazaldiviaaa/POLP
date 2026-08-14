@@ -1,5 +1,7 @@
+import dr from "../assets/dairy.jpg";
+
 const dairy = {
-  emoji: "🥛",
+  emoji: dr,
   title: "Dairy",
 
   choose: [

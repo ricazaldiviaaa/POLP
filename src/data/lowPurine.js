@@ -1,5 +1,7 @@
+import lp from "../assets/lp.jpg";
+
 const lowPurine = {
-  emoji: "🟢",
+  emoji: lp,
   title: "Low-Purine Foods",
 
   choose: [

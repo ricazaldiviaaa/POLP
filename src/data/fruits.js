@@ -1,5 +1,7 @@
+import frt from "../assets/fruit.jpg";
+
 const fruits = {
-  emoji: "🍎",
+  emoji: frt,
   title: "Fruits",
 
   choose: [

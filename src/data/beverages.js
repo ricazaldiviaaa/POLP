@@ -1,5 +1,7 @@
+import bv from "../assets/bv.jpg";
+
 const beverages = {
-  emoji: "💧",
+  emoji: bv,
   title: "Beverages",
 
   choose: [

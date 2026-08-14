@@ -1,0 +1,81 @@
+/* =========================================================
+   PHOTOS
+========================================================= */
+
+.photos-screen {
+  width: 100%;
+  height: 100%;
+
+  overflow-y: auto;
+
+  padding: 40px 30px;
+
+  background: #faf5fb;
+}
+
+.photos-screen::-webkit-scrollbar {
+  display: none;
+}
+
+.photos-header small {
+  color: #a07fa5;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+.photos-header h2 {
+  margin: 10px 0;
+
+  color: #604969;
+
+  font-size: 30px;
+
+  font-weight: normal;
+}
+
+.photo-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.photo-placeholder {
+  min-height: 220px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 22px;
+
+  color: white;
+
+  font-size: 45px;
+
+  box-shadow:
+    0 8px 22px rgba(91, 62, 100, 0.08);
+}
+
+.photo-one {
+  background: #c5a6c9;
+}
+
+.photo-two {
+  background: #a989b0;
+}
+
+.photo-three {
+  background: #d4b9d7;
+}
+
+.photo-four {
+  background: #b899bf;
+}

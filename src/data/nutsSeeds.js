@@ -1,5 +1,7 @@
+import nts from "../assets/nuts.jpg";
+
 const nutsSeeds = {
-  emoji: "🥜",
+  emoji: nts,
   title: "Nuts & Seeds",
 
   choose: [

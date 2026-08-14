@@ -1,6 +1,8 @@
+import lnch from "../assets/lunch.jpg";
+
 const lunch = {
-  emoji: "🍱",
-  title: "Filipino Lunch",
+  emoji: lnch,
+  title: "Lunch",
 
   choose: [
     "Chicken tinola + rice",

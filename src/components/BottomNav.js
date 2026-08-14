@@ -1,7 +1,8 @@
 import React from "react";
-import "./BottomNav.css";
+import "../css/BottomNav.css";
 
 function BottomNav({ active, setActive }) {
+
   const items = [
     {
       id: "home",
@@ -61,7 +62,10 @@ function BottomNav({ active, setActive }) {
   ];
 
   return (
-    <nav className="bottom-nav" aria-label="Main navigation">
+    <nav
+      className="bottom-nav"
+      aria-label="Main navigation"
+    >
       {items.map((item) => (
         <button
           key={item.id}
@@ -71,7 +75,11 @@ function BottomNav({ active, setActive }) {
           }`}
           onClick={() => setActive(item.id)}
           aria-label={item.label}
-          aria-current={active === item.id ? "page" : undefined}
+          aria-current={
+            active === item.id
+              ? "page"
+              : undefined
+          }
         >
           <span className="nav-icon">
             {item.icon}

@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+  /* =========================================================
+     PRIMARY — CRIMSON
+  ========================================================= */
+
+  --crimson: #9b1d1d;
+  --crimson-dark: #7f1717;
+  --crimson-light: #f8e9e9;
+
+  /* =========================================================
+     ACCENT — SKY BLUE
+  ========================================================= */
+
+  --sky: #afd9ff;
+  --sky-dark: #6faedc;
+  --sky-light: #eef8ff;
+
+  /* =========================================================
+     TEXT
+  ========================================================= */
+
+  --text-dark: #3f3030;
+  --text-medium: #665c5c;
+  --text-light: #8a8080;
+
+  /* =========================================================
+     NEUTRALS
+  ========================================================= */
+
+  --white: #ffffff;
+  --background: #fbfcfe;
+  --border: #dcecf8;
+
+  --shadow: rgba(63, 48, 48, 0.12);
+}
+
+
+/* =========================================================
+   PHONE / APP CONTAINER
+========================================================= */
+
+.app-container {
+  width: 390px;
+  height: 780px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: var(--white);
+
+  border-radius: 38px;
+
+  box-shadow:
+    0 30px 80px rgba(127, 23, 23, 0.14);
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    border-radius 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   HOME SCREEN
+========================================================= */
+
+.home-screen {
+  width: 100%;
+  min-height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 25px;
+
+  overflow-y: auto;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #ffffff 0%,
+      var(--sky-light) 48%,
+      #f8e9e9 100%
+    );
+}
+
+.home-screen::-webkit-scrollbar {
+  display: none;
+}
+
+.home-art {
+  width: 100%;
+  max-width: 500px;
+
+  position: relative;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   DECORATIVE HEARTS
+========================================================= */
+
+.tiny-heart {
+  position: absolute;
+
+  color: var(--crimson);
+
+  font-size: 34px;
+
+  opacity: 0.65;
+
+  animation: floatHeart 4s ease-in-out infinite;
+}
+
+.heart-one {
+  top: -20px;
+  left: 5%;
+}
+
+.heart-two {
+  top: 40px;
+  right: 5%;
+
+  animation-delay: 1s;
+}
+
+@keyframes floatHeart {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+/* =========================================================
+   COUPLE DRAWING
+========================================================= */
+
+.couple-drawing {
+  width: 100%;
+  height: 280px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+/* =========================================================
+   PEOPLE
+========================================================= */
+
+.person {
+  width: 100px;
+  height: 190px;
+
+  position: relative;
+
+  border-radius: 55px 55px 25px 25px;
+
+  transition: transform 0.3s ease;
+}
+
+.person::before {
+  content: "";
+
+  position: absolute;
+
+  width: 72px;
+  height: 72px;
+
+  left: 14px;
+  top: -52px;
+
+  border-radius: 50%;
+
+  background: #e5b99e;
+}
+
+
+/* =========================================================
+   LEFT PERSON — CRIMSON
+========================================================= */
+
+.person-left {
+  background: var(--crimson);
+
+  transform: rotate(-7deg);
+
+  margin-right: -12px;
+}
+
+.person-left::before {
+  background: #e4b99f;
+}
+
+
+/* =========================================================
+   RIGHT PERSON — SKY BLUE
+========================================================= */
+
+.person-right {
+  background: var(--sky-dark);
+
+  transform: rotate(7deg);
+
+  margin-left: -12px;
+}
+
+.person-right::before {
+  background: #d8a98c;
+}
+
+
+/* =========================================================
+   HEART BETWEEN COUPLE
+========================================================= */
+
+.holding-heart {
+  position: absolute;
+
+  left: 50%;
+  top: 65px;
+
+  transform: translateX(-50%);
+
+  color: var(--crimson);
+
+  font-size: 54px;
+
+  z-index: 5;
+
+  animation: heartBeat 2s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.12);
+  }
+}
+
+
+/* =========================================================
+   HOME TEXT
+========================================================= */
+
+.home-text {
+  margin-top: 20px;
+}
+
+.home-text small {
+  display: block;
+
+  color: var(--crimson);
+
+  font-family: 'Nunito', sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  font-weight: 700;
+}
+
+.home-text h1 {
+  margin: 12px 0;
+
+  color: var(--crimson-dark);
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: clamp(48px, 7vw, 70px);
+
+  line-height: 0.95;
+
+  font-weight: 700;
+}
+
+.home-text p {
+  max-width: 420px;
+
+  margin: 0 auto;
+
+  color: var(--text-medium);
+
+  font-family: 'Nunito', sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   START BUTTON
+========================================================= */
+
+.start-button {
+  margin-top: 30px;
+
+  padding: 15px 30px;
+
+  border: none;
+
+  border-radius: 40px;
+
+  background: var(--crimson);
+
+  color: var(--white);
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 25px rgba(127, 23, 23, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.start-button:hover {
+  background: var(--crimson-dark);
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 30px rgba(127, 23, 23, 0.24);
+}
+
+.start-button:active {
+  transform: scale(0.97);
+}
