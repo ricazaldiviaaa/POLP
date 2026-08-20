@@ -1,10 +1,4 @@
-/* =========================================================
-   DESKTOP
-   1200px AND ABOVE
-
-   ALL MAIN SCREENS:
-   padding: 90px 45px 45px
-========================================================= */
+/* DESKTOP 1200px AND ABOVE */
 
 @media (min-width: 1200px) {
 
@@ -20,44 +14,11 @@
     border-radius: 30px;
   }
 
-
-  /* =======================================================
-     SAME PADDING FOR HOME / ANNIVERSARY / MEMORY / PHOTOS
-  ======================================================= */
-
   .home-screen,
   .anniversary-screen,
   .memory-screen,
   .photos-screen {
     padding: 90px 45px 45px;
-  }
-
-
-  /* =======================================================
-     HOME
-  ======================================================= */
-
-  .home-art {
-    max-width: 900px;
-  }
-
-  .couple-drawing {
-    height: 300px;
-  }
-
-  .person {
-    width: 120px;
-    height: 210px;
-  }
-
-  .person::before {
-    width: 82px;
-    height: 82px;
-  }
-
-  .person-left::before,
-  .person-right::before {
-    left: 19px;
   }
 
   /*MEMORY / FOOD*/
@@ -168,11 +129,7 @@
 
   /*HOME*/
 
-  .home-art {
-    max-width: 700px;
-  }
-
-
+  
   /*ANNIVERSARY*/
 
   .anniversary-list {
@@ -295,9 +252,6 @@
 
   /*HOME*/
 
-  .home-screen {
-    padding: 35px 25px;
-  }
 
 
   /*ANNIVERSARY*/
@@ -493,78 +447,347 @@
 
 
   /*HOME*/
-
   .home-screen {
-    min-height: 100vh;
-
-    padding:
-      40px
-      20px
-      110px;
+    padding: 30px 22px;
+    margin-bottom: 60px;
   }
 
-  .home-art {
-    max-width: 390px;
+  .home-dashboard {
+    width: 100%;
   }
 
-  .couple-drawing {
-    height: 240px;
+
+  /* Welcome */
+
+  .home-welcome {
+    min-height: 430px;
+
+    padding: 28px 22px;
+
+    display: block;
+
+    border-radius: 24px;
   }
 
-  .person {
-    width: 85px;
-
-    height: 170px;
+  .welcome-text {
+    max-width: 100%;
   }
 
-  .person::before {
-    width: 65px;
+  .welcome-label {
+    margin-bottom: 12px;
 
-    height: 65px;
+    font-size: 8px;
 
-    left: 10px;
+    letter-spacing: 1.7px;
   }
 
-  .holding-heart {
-    font-size: 45px;
+  .welcome-text h1 {
+    font-size: clamp(38px, 11vw, 48px);
 
-    top: 60px;
+    line-height: 1.02;
   }
 
-  .home-text h1 {
-    font-size: 50px;
+  .welcome-text > p {
+    max-width: 310px;
+
+    margin: 17px 0 15px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
   }
 
-  .home-text p {
+  .welcome-date {
+    font-size: 9px;
+  }
+
+  .welcome-date span {
     font-size: 14px;
-
-    padding: 0 10px;
   }
 
-  .start-button {
-    width: auto;
 
-    max-width: 90%;
+  /* Illustration */
 
-    padding: 14px 25px;
+  .welcome-illustration {
+    position: absolute;
+
+    right: -5px;
+    bottom: -5px;
+
+    width: 215px;
+    height: 195px;
+
+    transform: scale(0.85);
+
+    transform-origin: bottom right;
   }
+
+
+  /* Stats */
+
+  .home-stats {
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-top: 13px;
+
+    border-radius: 17px;
+  }
+
+  .stat-item {
+    min-height: 72px;
+
+    padding: 13px 12px;
+
+    gap: 9px;
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stat-icon {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+  }
+
+  .stat-item strong {
+    font-size: 15px;
+  }
+
+  .stat-item small {
+    font-size: 7px;
+  }
+
+
+  /* Content */
+
+  .home-content-grid {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+
+    margin-top: 13px;
+  }
+
+  .home-panel {
+    padding: 18px;
+
+    border-radius: 19px;
+  }
+
+
+  /* Panel headings */
+
+  .panel-heading {
+    margin-bottom: 14px;
+  }
+
+  .panel-heading h2 {
+    font-size: 18px;
+  }
+
+
+  /* Memory */
+
+  .memory-photo {
+    height: 165px;
+
+    border-radius: 13px;
+  }
+
+  .photo-placeholder span {
+    font-size: 38px;
+  }
+
+  .home-panel.memory-preview.clickable-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .memory-photo {
+    width: 100%;
+    height: 70px;
+
+    border-radius: 13px;
+  }
+
+  .memory-info {
+    gap: 10px;
+    
+    margin-top: 13px;
+  }
+
+  .memory-info h3 {
+    font-size: 14px;
+  }
+
+  .memory-info p {
+    font-size: 9px;
+  }
+
+  .memory-arrow {
+    font-size: 17px;
+  }
+
+
+  /* Note */
+
+  .note-text {
+    margin: 28px 0 32px;
+
+    font-size: 16px;
+  }
+
+  .note-decoration {
+    font-size: 55px;
+  }
+
+
+  /* Food */
+
+  .food-preview {
+    min-height: auto;
+  }
+
+  .food-display {
+    gap: 14px;
+
+    align-items: flex-start;
+  }
+
+  .food-circle {
+    width: 72px;
+    height: 72px;
+
+    font-size: 29px;
+  }
+
+  .food-info h3 {
+    margin: 4px 0;
+
+    font-size: 15px;
+  }
+
+  .food-info p {
+    font-size: 9px;
+  }
+
+  .food-tags {
+    gap: 5px;
+
+    margin-top: 17px;
+  }
+
+  .food-tags span {
+    padding: 5px 8px;
+
+    font-size: 7px;
+  }
+
+
+  /* Timeline */
+
+  .timeline-panel {
+    min-height: auto;
+  }
+
+  .timeline-item {
+    gap: 14px;
+
+    padding-bottom: 15px;
+  }
+
+  .timeline-item h3 {
+    font-size: 12px;
+  }
+
+  .timeline-item p {
+    font-size: 9px;
+  }
+
+
+  /* Gallery */
+
+  .home-gallery {
+    margin-top: 13px;
+
+    padding: 18px;
+
+    border-radius: 19px;
+  }
+
+  .gallery-heading {
+    display: block;
+
+    margin-bottom: 14px;
+  }
+
+  .gallery-heading h2 {
+    font-size: 19px;
+  }
+
+  .gallery-heading p {
+    margin-top: 5px;
+
+    font-size: 9px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 7px;
+  }
+
+  .gallery-photo {
+    height: 105px;
+
+    border-radius: 11px;
+
+    font-size: 22px;
+  }
+
+
+  /* Footer */
+
+  .home-footer-message {
+    padding: 38px 10px 15px;
+
+    gap: 12px;
+  }
+
+  .home-footer-message > span {
+    font-size: 14px;
+  }
+
+  .home-footer-message small {
+    font-size: 7px;
+  }
+
+  .home-footer-message h2 {
+    font-size: 18px;
+  }
+
+
 
   /* ANNIVERSARY*/
     .anniversary-screen {
-    min-height: 100vh;
-
-    padding:
-      40px
-      20px
-      110px;
-  }
+    padding: 30px 22px;
+    margin-bottom: 20px;
+    }
 
   /*MEMORY / FOOD*/
 
   .memory-screen {
-    min-height: 100vh;
-
-    padding-bottom: 90px;
+    margin-bottom: 70px;
   }
 
   .memory-header {
@@ -739,11 +962,6 @@
 
   .search-results button > span:last-child {
     display: none;
-  }
-
-  .home-screen {
-    padding-left: 15px;
-    padding-right: 15px;
   }
 
   .couple-drawing {

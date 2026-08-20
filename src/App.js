@@ -17,10 +17,6 @@ function App() {
 
       <div className="app-container">
 
-        {/* =================================================
-            SCROLLABLE MAIN PAGE
-        ================================================= */}
-
         <div className="page-content">
 
           {/* HOME */}
