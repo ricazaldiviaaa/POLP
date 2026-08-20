@@ -3,12 +3,12 @@ import "../css/HomeScreen.css";
 import "./../css/Responsive.css";
 
 import beverages from "../data/beverages";
-import anniversaryData from "../data/anniversaryData";
+import anniversaryDataa from "../data/anniversaryData";
 
 function HomeScreen({ setActive }) {
 
   const foodData = beverages;
-  const anniversary = anniversaryData[1];
+  const anniversary = anniversaryDataa[1];
 
   const handleNavigate = (screen) => {
     setActive(screen);
@@ -468,7 +468,7 @@ function HomeScreen({ setActive }) {
 
             <div className="timeline">
 
-              {Object.values(anniversaryData).map((anniversary) => (
+              {Object.values(anniversaryDataa).map((anniversary) => (
 
                 <div
                   className="timeline-item"
