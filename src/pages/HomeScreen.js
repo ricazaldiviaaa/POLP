@@ -8,7 +8,6 @@ import anniversaryDataa from "../data/anniversaryData";
 function HomeScreen({ setActive }) {
 
   const foodData = beverages;
-  const anniversary = anniversaryDataa[1];
 
   const handleNavigate = (screen) => {
     setActive(screen);
