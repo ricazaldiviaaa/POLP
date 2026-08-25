@@ -1,6 +1,17 @@
 /* =========================================================
    MODAL OVERLAY
 ========================================================= */
+  .modal-message mark {
+  padding: 2px 5px;
+
+  border-radius: 5px;
+
+  background: #afd9ff;
+
+  color: var(--text-dark);
+
+  font-weight: 500;
+}
 
 .anniversary-modal-overlay {
   position: fixed;
@@ -295,6 +306,7 @@
 
 .modal-message {
   width: 100%;
+  font-family: "Poppins", sans-serif;
 
   padding: 20px 22px;
 
@@ -303,7 +315,10 @@
   background: #f8fbff;
 
   border: 1px solid #e3f0fa;
+
+  text-align: center;
 }
+
 
 .modal-message p {
   margin: 0 0 14px;
@@ -316,8 +331,9 @@
 
   line-height: 1.75;
 
-  text-align: left;
+  text-align: center;
 }
+
 
 .modal-message p:last-child {
   margin-bottom: 0;

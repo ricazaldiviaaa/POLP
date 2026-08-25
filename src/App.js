@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+
 import "./App.css";
 import "./css/Responsive.css";
 
@@ -9,30 +10,65 @@ import PhotosScreen from "./pages/PhotosScreen";
 
 import BottomNav from "./components/BottomNav";
 
+
 function App() {
   const [active, setActive] = useState("home");
+
+  const pageContentRef = useRef(null);
+
+
+  /* =========================================================
+     SCROLL TO TOP WHEN PAGE CHANGES
+  ========================================================= */
+
+const scrollToTop = () => {
+  if (pageContentRef.current) {
+    pageContentRef.current.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+};
+
+useEffect(() => {
+  scrollToTop();
+}, [active]);
+
 
   return (
     <main className="page">
 
       <div className="app-container">
 
-        <div className="page-content">
+        {/* =================================================
+            SCROLLABLE PAGE CONTENT
+        ================================================= */}
+
+        <div
+          className="page-content"
+          ref={pageContentRef}
+        >
 
           {/* HOME */}
           {active === "home" && (
             <HomeScreen setActive={setActive} />
           )}
 
+
           {/* ANNIVERSARY */}
           {active === "search" && (
             <AnniversaryScreen setActive={setActive} />
           )}
 
+
           {/* MEMORIES */}
           {active === "food" && (
-            <MemoryScreen setActive={setActive} />
+              <MemoryScreen
+              setActive={setActive}
+              scrollToTop={scrollToTop}
+            />
           )}
+
 
           {/* PHOTOS */}
           {active === "photos" && (
@@ -40,6 +76,7 @@ function App() {
           )}
 
         </div>
+
 
         {/* =================================================
             BOTTOM NAVIGATION
@@ -56,7 +93,5 @@ function App() {
   );
 }
 
-  /* =========================================================
-     add
-  ========================================================= */
+
 export default App;

@@ -1,0 +1,1052 @@
+/* =========================================================
+   PHOTOS SCREEN
+========================================================= */
+
+.photos-screen::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.photos-header {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 30px;
+}
+
+
+.photos-kicker {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: var(--crimson);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 3.5px;
+}
+
+
+.photos-header h1 {
+  margin: 0;
+
+  color: var(--text-dark);
+
+  font-size: 40px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+.photos-header h1 span {
+  margin-left: 7px;
+
+  color: var(--crimson);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 25px;
+}
+
+
+.photos-header p {
+  max-width: 330px;
+
+  margin: 14px auto 0;
+
+  color: var(--text-light);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   LETTER / NOTE
+========================================================= */
+
+.photo-letter {
+  position: relative;
+
+  max-width: 600px;
+
+  margin: 0 auto 42px;
+
+  padding: 22px 28px 20px;
+
+  background: #fffdf8;
+
+  border: 1px solid rgba(140, 26, 16, 0.08);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 9px 25px rgba(38, 50, 61, 0.08);
+
+  transform: rotate(-0.6deg);
+}
+
+
+.photo-letter::before {
+  content: "";
+
+  position: absolute;
+
+  top: -7px;
+  left: 50%;
+
+  width: 70px;
+  height: 15px;
+
+  background: rgba(175, 217, 255, 0.65);
+
+  transform:
+    translateX(-50%)
+    rotate(2deg);
+
+  border-radius: 4px;
+}
+
+
+.letter-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+
+  color: var(--crimson);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.letter-top span:last-child {
+  font-size: 18px;
+
+  letter-spacing: 0;
+}
+
+
+.photo-letter p {
+  margin: 0;
+
+  max-width: 440px;
+
+  color: var(--text-medium);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 15px;
+  font-style: italic;
+
+  line-height: 1.65;
+}
+
+
+.letter-line {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 17px 0 9px;
+
+  background: #e9e3dc;
+}
+
+
+.photo-letter small {
+  color: var(--text-light);
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.photo-section-heading {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+
+  padding: 0 5px;
+}
+
+
+.photo-section-heading > div > span {
+  color: var(--sky-blue-dark);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+
+.photo-section-heading h2 {
+  margin: 5px 0 0;
+
+  color: var(--crimson);
+
+  font-size: 20px;
+  font-weight: 1000;
+}
+
+
+.photo-section-heading strong {
+  color: var(--crimson);
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+
+.photo-section-heading strong small {
+  color: var(--text-light);
+
+  padding-left: 5px;
+
+  font-size: 9px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   PHOTO COLLAGE
+========================================================= */
+
+.photo-collage {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 38px 25px;
+
+  padding: 8px 8px 55px;
+}
+
+
+/* =========================================================
+   POLAROID
+========================================================= */
+
+.memory-polaroid {
+  position: relative;
+
+  width: 100%;
+
+  padding: 9px 9px 15px;
+
+  border: 0;
+
+  border-radius: 18px;
+
+  background: #fff;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 18px rgba(38, 50, 61, 0.10);
+
+  transition:
+    transform 0.35s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.35s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.memory-polaroid:hover {
+  z-index: 5;
+
+  transform:
+    translateY(-10px)
+    rotate(0deg) !important;
+
+  box-shadow:
+    0 20px 35px rgba(38, 50, 61, 0.18);
+}
+
+
+.memory-polaroid:active {
+  transform:
+    scale(0.96)
+    rotate(0deg) !important;
+}
+
+
+/* =========================================================
+   PHOTO FRAME
+========================================================= */
+
+.photo-frame {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  background: var(--sky-blue-light);
+}
+
+
+.photo-frame img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 13px;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+
+.memory-polaroid:hover .photo-frame img {
+  transform: scale(1.07);
+
+  filter: saturate(1.05);
+}
+
+
+/* =========================================================
+   HOVER VIEW EFFECT
+========================================================= */
+
+.photo-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(30, 18, 74, 0.28);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.3s ease;
+}
+
+
+.memory-polaroid:hover .photo-overlay {
+  opacity: 1;
+}
+
+
+.photo-overlay span {
+  padding: 7px 13px;
+
+  border: 1px solid rgba(255,255,255,0.8);
+
+  border-radius: 20px;
+
+  color: white;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  backdrop-filter: blur(4px);
+}
+
+
+/* =========================================================
+   CAPTION
+========================================================= */
+
+.polaroid-caption {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+
+  display: flex;
+
+  align-items: center;
+
+  min-height: 42px;
+
+  padding: 9px 3px 0;
+}
+
+
+.polaroid-caption p {
+  flex: 1;
+
+  margin: 0;
+
+  padding: 0 5px;
+
+  color: var(--text-medium);
+
+  font-size: 10px;
+
+  font-style: italic;
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+
+.memory-number {
+  color: var(--sky-blue-dark);
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.tiny-heart {
+  color: var(--crimson);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   POLAROID ROTATIONS — 22 PHOTOS
+========================================================= */
+
+.memory-1 {
+  transform: rotate(-3.5deg);
+}
+
+.memory-2 {
+  transform: rotate(2.5deg);
+}
+
+.memory-3 {
+  transform: rotate(-1.8deg);
+}
+
+.memory-4 {
+  transform: rotate(3.5deg);
+}
+
+.memory-5 {
+  transform: rotate(-2.5deg);
+}
+
+.memory-6 {
+  transform: rotate(2deg);
+}
+
+.memory-7 {
+  transform: rotate(-3deg);
+}
+
+.memory-8 {
+  transform: rotate(2.8deg);
+}
+
+.memory-9 {
+  transform: rotate(-2deg);
+}
+
+.memory-10 {
+  transform: rotate(3.2deg);
+}
+
+.memory-11 {
+  transform: rotate(-2.8deg);
+}
+
+.memory-12 {
+  transform: rotate(1.8deg);
+}
+
+.memory-13 {
+  transform: rotate(-3.2deg);
+}
+
+.memory-14 {
+  transform: rotate(2.2deg);
+}
+
+.memory-15 {
+  transform: rotate(-1.7deg);
+}
+
+.memory-16 {
+  transform: rotate(3deg);
+}
+
+.memory-17 {
+  transform: rotate(-2.5deg);
+}
+
+.memory-18 {
+  transform: rotate(2.7deg);
+}
+
+.memory-19 {
+  transform: rotate(-3deg);
+}
+
+.memory-20 {
+  transform: rotate(2deg);
+}
+
+.memory-21 {
+  transform: rotate(-2.3deg);
+}
+
+.memory-22 {
+  transform: rotate(3deg);
+}
+
+
+/* =========================================================
+   PHOTO VIEWER
+========================================================= */
+
+.photo-viewer {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background:
+    rgba(20, 24, 30, 0.72);
+
+  backdrop-filter: blur(10px);
+
+  animation: viewerFade 0.25s ease;
+}
+
+
+@keyframes viewerFade {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+.viewer-card {
+  position: relative;
+
+  width: min(520px, 100%);
+
+  max-height: 92vh;
+
+  padding: 12px 12px 20px;
+
+  overflow: auto;
+
+  background: #fffdf9;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.30);
+
+  animation: viewerOpen 0.35s cubic-bezier(.2,.8,.2,1);
+}
+
+
+@keyframes viewerOpen {
+
+  from {
+    opacity: 0;
+
+    transform:
+      scale(0.88)
+      rotate(-3deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      rotate(0);
+  }
+
+}
+
+
+.viewer-close {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  z-index: 5;
+
+  width: 32px;
+  height: 32px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.9);
+
+  color: var(--crimson);
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 10px rgba(0,0,0,0.12);
+}
+
+
+.viewer-image-wrap {
+  width: 100%;
+
+  max-height: 65vh;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  background: #eee;
+}
+
+
+.viewer-image-wrap img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-height: 65vh;
+
+  object-fit: contain;
+
+  border-radius: 13px;
+}
+
+
+.viewer-caption {
+  padding: 16px 8px 2px;
+
+  text-align: center;
+}
+
+
+.viewer-caption > span {
+  color: var(--sky-blue-dark);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.viewer-caption h2 {
+  margin: 6px 0 5px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+
+  font-size: 22px;
+  font-weight: 600;
+}
+
+
+.viewer-caption p {
+  margin: 0;
+
+  color: var(--text-light);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 11px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   MOBILE
+   350px - 480px
+========================================================= */
+
+@media (min-width: 350px) and (max-width: 480px) {
+
+  .photos-screen {
+    padding: 30px 22px 90px;
+  }
+
+
+  .photos-header {
+    margin-bottom: 27px;
+  }
+
+
+  .photos-header h1 {
+    font-size: 31px;
+  }
+
+
+  .photos-header p {
+    max-width: 285px;
+
+    font-size: 11px;
+  }
+
+
+  .photo-letter {
+    margin-bottom: 35px;
+
+    padding: 19px 20px 17px;
+
+    border-radius: 13px;
+  }
+
+
+  .photo-letter p {
+    font-size: 13px;
+  }
+
+
+  .photo-section-heading {
+    margin-bottom: 20px;
+  }
+
+
+  .photo-section-heading h2 {
+    font-size: 19px;
+  }
+
+
+  .photo-section-heading strong {
+    font-size: 19px;
+  }
+
+
+  .photo-collage {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 28px 18px;
+
+    padding: 7px 3px 0;
+  }
+
+
+  .memory-polaroid {
+    padding: 7px 7px 12px;
+
+    border-radius: 14px;
+  }
+
+
+  .photo-frame {
+    border-radius: 10px;
+  }
+
+
+  .photo-frame img {
+    border-radius: 10px;
+  }
+
+
+  .polaroid-caption {
+    min-height: 38px;
+
+    padding-top: 7px;
+  }
+
+
+  .polaroid-caption p {
+    font-size: 9px;
+  }
+
+
+  .memory-number {
+    font-size: 6px;
+  }
+
+
+  .tiny-heart {
+    font-size: 11px;
+  }
+
+
+  /* =====================================================
+     MOBILE ROTATIONS
+  ===================================================== */
+
+  .memory-1 {
+    transform: rotate(-2deg);
+  }
+
+  .memory-2 {
+    transform: rotate(2deg);
+  }
+
+  .memory-3 {
+    transform: rotate(-1.5deg);
+  }
+
+  .memory-4 {
+    transform: rotate(2deg);
+  }
+
+  .memory-5 {
+    transform: rotate(-2deg);
+  }
+
+  .memory-6 {
+    transform: rotate(1.5deg);
+  }
+
+  .memory-7 {
+    transform: rotate(-2deg);
+  }
+
+  .memory-8 {
+    transform: rotate(1.8deg);
+  }
+
+  .memory-9 {
+    transform: rotate(-1.5deg);
+  }
+
+  .memory-10 {
+    transform: rotate(2deg);
+  }
+
+  .memory-11 {
+    transform: rotate(-1.8deg);
+  }
+
+  .memory-12 {
+    transform: rotate(1.5deg);
+  }
+
+  .memory-13 {
+    transform: rotate(-2deg);
+  }
+
+  .memory-14 {
+    transform: rotate(1.8deg);
+  }
+
+  .memory-15 {
+    transform: rotate(-1.5deg);
+  }
+
+  .memory-16 {
+    transform: rotate(2deg);
+  }
+
+  .memory-17 {
+    transform: rotate(-1.8deg);
+  }
+
+  .memory-18 {
+    transform: rotate(1.5deg);
+  }
+
+  .memory-19 {
+    transform: rotate(-2deg);
+  }
+
+  .memory-20 {
+    transform: rotate(1.7deg);
+  }
+
+  .memory-21 {
+    transform: rotate(-1.5deg);
+  }
+
+  .memory-22 {
+    transform: rotate(2deg);
+  }
+
+
+  /* =====================================================
+     PHOTO VIEWER
+  ===================================================== */
+
+  .photo-viewer {
+    padding: 25px 30px;
+  }
+
+
+  .viewer-card {
+    width: 88%;
+
+    max-width: 320px;
+
+    max-height: 80vh;
+
+    padding: 7px 7px 14px;
+
+    border-radius: 16px;
+  }
+
+
+  .viewer-image-wrap {
+    width: 100%;
+
+    max-height: 48vh;
+
+    border-radius: 10px;
+  }
+
+
+  .viewer-image-wrap img {
+    width: 100%;
+
+    max-height: 48vh;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+  }
+
+
+  .viewer-close {
+    top: 6px;
+    right: 6px;
+
+    width: 29px;
+    height: 29px;
+
+    font-size: 19px;
+  }
+
+
+  .viewer-caption {
+    padding: 11px 6px 2px;
+  }
+
+
+  .viewer-caption h2 {
+    margin: 4px 0;
+
+    font-size: 17px;
+  }
+
+
+  .viewer-caption p {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   349px AND BELOW
+========================================================= */
+
+@media (max-width: 349px) {
+
+  .photos-screen {
+    padding: 25px 16px 80px;
+  }
+
+
+  .photos-header h1 {
+    font-size: 27px;
+  }
+
+
+  .photo-collage {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 22px 13px;
+
+    padding: 7px 2px 35px;
+  }
+
+
+  .memory-polaroid {
+    padding: 6px 6px 10px;
+
+    border-radius: 12px;
+  }
+
+
+  .photo-frame {
+    border-radius: 9px;
+  }
+
+
+  .photo-frame img {
+    border-radius: 9px;
+  }
+
+
+  .polaroid-caption p {
+    font-size: 8px;
+  }
+
+
+  .photo-letter {
+    padding: 17px;
+
+    border-radius: 12px;
+  }
+
+
+  .photo-letter p {
+    font-size: 12px;
+  }
+
+
+  .viewer-card {
+    border-radius: 14px;
+  }
+
+}

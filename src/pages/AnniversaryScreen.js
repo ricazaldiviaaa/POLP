@@ -108,7 +108,7 @@ function AnniversaryScreen() {
         <div className="topbar-text">
 
           <h2>
-            Our Memories ♡
+            Our Memories
           </h2>
 
           <p className="intro">

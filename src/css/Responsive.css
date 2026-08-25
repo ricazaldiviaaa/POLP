@@ -27,6 +27,15 @@
     padding: 30px 0;
   }
 
+    .memory-header {
+    padding-top: 10px;
+
+    }
+
+    .memory-detail-content{
+    padding: 35px 25px;
+  }
+
   .food-grid {
     width: 100%;
 
@@ -37,17 +46,6 @@
 
     gap: 14px;
     }
-
-
-  /*PHOTOS*/
-
-  .photo-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .photo-placeholder {
-    min-height: 300px;
-  }
 
 
   /*DESKTOP NAVIGATION*/
@@ -158,17 +156,6 @@
     gap: 14px;
     }
 
-  /*PHOTOS*/
-
-  .photo-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .photo-placeholder {
-    min-height: 240px;
-  }
-
-
   /*WEBSITE-LIKE NAVIGATION*/
 
   .bottom-nav {
@@ -270,6 +257,12 @@
     padding: 35px 25px;
   }
 
+    .memory-header {
+    padding: 0 20px;
+    padding-top: 55px;
+
+    }
+
     .food-grid {
     width: 100%;
 
@@ -280,16 +273,9 @@
 
     gap: 14px;
     }
-
-
-  /*PHOTOS*/
-
-  .photos-screen {
+  
+  .memory-detail-content{
     padding: 35px 25px;
-  }
-
-  .photo-placeholder {
-    min-height: 200px;
   }
 
 
@@ -325,8 +311,6 @@
 
   .memory-header {
     width: 100%;
-
-    padding: 0px;
   }
 
   .memory-header h2 {
@@ -791,11 +775,20 @@
   }
 
   .memory-header {
-    padding: 30px 20px;
+    padding: 0 20px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+
   }
 
   .memory-content {
-    padding: 25px 20px;
+    padding: 10px 20px;
+    padding-bottom: 25px;
+
+  }
+
+  .memory-detail-content{
+    padding: 35px 25px;
   }
 
   .food-grid {
@@ -824,31 +817,6 @@
     margin-bottom: 8px;
   }
 }
-
-
-  /*PHOTOS*/
-
-  .photos-screen {
-    min-height: 100vh;
-
-    padding:
-      35px
-      20px
-      110px;
-  }
-
-  .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 12px;
-  }
-
-  .photo-placeholder {
-    min-height: 160px;
-
-    border-radius: 16px;
-  }
-
 
   /*BOTTOM APP NAVIGATION*/
 

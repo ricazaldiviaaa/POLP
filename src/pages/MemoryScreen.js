@@ -18,7 +18,7 @@ import highUricAcid from "../data/highUricAcid";
 import "../css/MemoryScreen.css";
 import "../css/Responsive.css";
 
-function MemoryScreen() {
+function MemoryScreen( { scrollToTop } ) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -38,6 +38,7 @@ function MemoryScreen() {
     streetFoods,
     highUricAcid,
   ];
+
 
   const searchResults = categories.flatMap((category) => {
     const term = searchTerm.toLowerCase();
@@ -73,7 +74,10 @@ function MemoryScreen() {
           <button
             type="button"
             className="memory-back-button"
-            onClick={() => setSelectedCategory(null)}
+            onClick={() => {
+            setSelectedCategory(null);
+            scrollToTop();
+          }}
             aria-label="Go back"
           >
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#51abd2"><path d="M280-200v-80h284q63 0 109.5-40T720-420q0-60-46.5-100T564-560H312l104 104-56 56-200-200 200-200 56 56-104 104h252q97 0 166.5 63T800-420q0 94-69.5 157T564-200H280Z"/></svg>
@@ -93,7 +97,7 @@ function MemoryScreen() {
           </div>
         </div>
 
-        <div className="memory-content memory-detail-content">
+        <div className="memory-detail-content">
 
           {/* BETTER CHOICES */}
 
@@ -205,7 +209,11 @@ function MemoryScreen() {
         </div>
       </section>
     );
+
+    
   }
+
+  
 
 
   /* =========================================================
@@ -226,7 +234,7 @@ function MemoryScreen() {
           </small>
 
           <h2>
-            Food Guide ♡
+            Food Guide
           </h2>
 
           <p className="intro">
@@ -301,6 +309,7 @@ function MemoryScreen() {
                   className="search-result-item"
                   key={`${result.category.title}-${result.food}-${index}`}
                   onClick={() => {
+                    scrollToTop();
                     setSelectedCategory(result.category);
                     setSearchTerm("");
                   }}
@@ -368,9 +377,10 @@ function MemoryScreen() {
               type="button"
               className="food-card"
               key={category.title}
-              onClick={() =>
-                setSelectedCategory(category)
-              }
+              onClick={() => {
+                setSelectedCategory(category);
+                scrollToTop();
+              }}
             >
 
               <div className="food-image">

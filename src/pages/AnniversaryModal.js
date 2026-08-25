@@ -1,4 +1,5 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import "../css/AnniversaryModal.css";
 import "./../css/Responsive.css";
 
@@ -180,19 +181,51 @@ function AnniversaryModal({
         </p>
 
 
-        {/* =================================================
-            MESSAGE
-        ================================================= */}
+{/* =================================================
+    MESSAGE
+================================================= */}
 
-        <div className="modal-message">
+<div className="modal-message">
 
-          {data.message.map((paragraph, index) => (
-            <p key={index}>
-              {paragraph}
-            </p>
-          ))}
+  {data.message.map((paragraph, index) => {
 
-        </div>
+    const parts = paragraph.split(/(==.*?==)/g);
+
+    return (
+      <p key={index}>
+
+        {parts.map((part, partIndex) => {
+
+          if (
+            part.startsWith("==") &&
+            part.endsWith("==")
+          ) {
+            return (
+              <mark key={partIndex}>
+                {part.slice(2, -2)}
+              </mark>
+            );
+          }
+
+          return (
+            <ReactMarkdown
+              key={partIndex}
+              components={{
+                p: ({ children }) => <>{children}</>
+              }}
+            >
+              {part}
+            </ReactMarkdown>
+          );
+
+        })}
+
+      </p>
+    );
+
+  })}
+
+</div>
 
 
         {/* =================================================
