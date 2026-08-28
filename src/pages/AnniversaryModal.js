@@ -24,6 +24,7 @@ const renderSpoilers = (text) => {
 };
 
 function AnniversaryModal({
+  renderSpoilers,
   data,
   onClose,
   isFavorite,
