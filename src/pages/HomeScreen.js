@@ -142,7 +142,7 @@ function HomeScreen({ setActive }) {
             <div>
 
               <strong>
-                22
+                23
               </strong>
 
               <small>

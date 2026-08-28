@@ -89,7 +89,7 @@ const anniversaryData = {
 
 
       {
-        title: "thank you",
+        title: "appreciation",
 
         content: [
 
@@ -100,7 +100,7 @@ const anniversaryData = {
 
 
       {
-        title: "sorry",
+        title: "from my heart",
 
         content: [
 
@@ -109,7 +109,7 @@ const anniversaryData = {
       },
 
       {
-        title: "you know",
+        title: "as you know",
 
         content: [
 
@@ -119,7 +119,7 @@ const anniversaryData = {
       },
 
       {
-        title: "future",
+        title: "longing",
 
         content: [
 
