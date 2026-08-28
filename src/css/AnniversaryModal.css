@@ -1,10 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+.shrikhand-regular {
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  margin: 0;
+  padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.spoiler {
+  background: #8c1a10;
+  color: transparent;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  transition: 
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.spoiler:hover {
+  background: transparent;
+  color: inherit;
+}
+
+/* =========================================================
+   MESSAGE BOX
+========================================================= */
+  .modal-message-title {
+  margin: 0 0 15px 0;
+  padding: 0;
+
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+}
+
+.modal-message {
+  width: 100%;
+
+  padding: 22px;
+
+  border-radius: 20px;
+
+  background: #f8fbff;
+
+  border: 1px solid #e3f0fa;
+
+  text-align: center;
+}
+
+/* =========================================================
+   MESSAGE SECTIONS
+========================================================= */
+
+.modal-messages {
+  width: 100%;
+
+  font-family: "Shirkhand", sans-serif;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px; /* SPACE BETWEEN MESSAGE BOXES */
+}
+
 /* =========================================================
    MODAL OVERLAY
 ========================================================= */
   .modal-message mark {
-  padding: 2px 5px;
-
-  border-radius: 5px;
+  margin: 0 5px;
 
   background: #afd9ff;
 
@@ -303,29 +373,34 @@
 /* =========================================================
    MESSAGE
 ========================================================= */
+  .modal-message {
+    width: 100%;
 
-.modal-message {
-  width: 100%;
-  font-family: "Poppins", sans-serif;
 
-  padding: 20px 22px;
+    padding: 16px 18px;
 
-  border-radius: 20px;
+    text-align: center;
 
-  background: #f8fbff;
+    font-family: "Shrikhand", serif;
+    font-weight: 200;
 
-  border: 1px solid #e3f0fa;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
 
-  text-align: center;
-}
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    border-radius: 17px;
+  }
 
 
 .modal-message p {
   margin: 0 0 14px;
 
-  color: #5f5555;
-
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  text-align: justify;
 
   font-size: 14px;
 
@@ -337,6 +412,10 @@
 
 .modal-message p:last-child {
   margin-bottom: 0;
+}
+
+.modal-message p strong {
+color: #8c1a10;
 }
 
 
@@ -480,14 +559,35 @@
     font-size: 12px;
   }
 
+  .modal-message-title {
+  margin: 0 0 15px 0;
+  padding: 0;
+
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+}
+
   .modal-message {
-    padding: 16px 17px;
+    width: 100%;
+
+
+    padding: 16px 18px;
+
+    text-align: center;
+
+    font-family: "Shrikhand", serif;
+    font-weight: 200;
+
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
 
     border-radius: 17px;
   }
 
   .modal-message p {
     font-size: 13px;
+    text-align: justify;
 
     line-height: 1.65;
   }

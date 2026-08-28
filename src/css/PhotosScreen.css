@@ -536,30 +536,34 @@
    PHOTO VIEWER
 ========================================================= */
 
+/* =========================================================
+   PHOTO VIEWER OVERLAY
+========================================================= */
+
 .photo-viewer {
   position: fixed;
 
   inset: 0;
 
-  z-index: 999;
+  z-index: 1000;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  padding: 25px;
+  padding: 20px;
 
-  background:
-    rgba(20, 24, 30, 0.72);
+  background: rgba(50, 20, 25, 0.55);
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 
-  animation: viewerFade 0.25s ease;
+  animation: viewerFadeIn 0.3s ease;
 }
 
 
-@keyframes viewerFade {
+@keyframes viewerFadeIn {
 
   from {
     opacity: 0;
@@ -571,146 +575,449 @@
 
 }
 
+
+/* =========================================================
+   VIEWER CARD
+========================================================= */
+
+/* =========================================================
+   PHOTO VIEWER OVERLAY
+========================================================= */
+
+.photo-viewer {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(28, 20, 22, 0.65);
+
+  backdrop-filter: blur(10px);
+
+  animation: viewerFadeIn 0.4s ease;
+}
+
+
+@keyframes viewerFadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
 
 .viewer-card {
   position: relative;
 
-  width: min(520px, 100%);
+  width: 100%;
 
-  max-height: 92vh;
+  max-width: 480px;
 
-  padding: 12px 12px 20px;
+  max-height: 90vh;
 
-  overflow: auto;
+  overflow-y: auto;
 
-  background: #fffdf9;
+  border: 1px solid
+    rgba(255, 255, 255, 0.55);
 
-  border-radius: 20px;
+  border-radius: 32px;
+
+  background:
+    rgba(255, 255, 255, 0.96);
 
   box-shadow:
-    0 25px 70px rgba(0,0,0,0.30);
+    0 30px 80px rgba(0, 0, 0, 0.28);
 
-  animation: viewerOpen 0.35s cubic-bezier(.2,.8,.2,1);
+  animation: viewerCardEnter
+    0.55s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
 }
 
 
-@keyframes viewerOpen {
+.viewer-card::-webkit-scrollbar {
+  display: none;
+}
+
+
+@keyframes viewerCardEnter {
 
   from {
     opacity: 0;
 
     transform:
-      scale(0.88)
-      rotate(-3deg);
+      translateY(35px)
+      scale(0.96);
   }
 
   to {
     opacity: 1;
 
     transform:
-      scale(1)
-      rotate(0);
+      translateY(0)
+      scale(1);
   }
 
 }
 
 
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
 .viewer-close {
   position: absolute;
 
-  top: 8px;
-  right: 8px;
+  top: 18px;
 
-  z-index: 5;
+  right: 18px;
 
-  width: 32px;
-  height: 32px;
+  z-index: 10;
 
-  border: 0;
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
 
   border-radius: 50%;
 
-  background: rgba(255,255,255,0.9);
+  background:
+    rgba(255, 255, 255, 0.92);
 
-  color: var(--crimson);
+  color: #8C1A10;
 
-  font-size: 22px;
+  font-family: "Poppins", sans-serif;
 
-  line-height: 1;
+  font-size: 26px;
 
   cursor: pointer;
 
   box-shadow:
-    0 3px 10px rgba(0,0,0,0.12);
+    0 8px 22px
+    rgba(70, 20, 25, 0.14);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
 
-.viewer-image-wrap {
-  width: 100%;
+.viewer-close:hover {
+  transform:
+    rotate(90deg)
+    scale(1.08);
 
-  max-height: 65vh;
+  background:
+    #fff4f5;
+}
+
+
+/* =========================================================
+   DECORATIONS
+========================================================= */
+
+.viewer-decoration {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(2px);
+}
+
+
+.viewer-decoration-one {
+  width: 180px;
+
+  height: 180px;
+
+  top: -80px;
+
+  left: -70px;
+
+  background:
+    rgba(255, 200, 210, 0.35);
+}
+
+
+.viewer-decoration-two {
+  width: 140px;
+
+  height: 140px;
+
+  bottom: -60px;
+
+  right: -50px;
+
+  background:
+    rgba(220, 230, 255, 0.35);
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.viewer-image-wrap {
+  position: relative;
+
+  z-index: 2;
+
+  padding:
+    34px
+    34px
+    0;
+}
+
+
+.viewer-image-frame {
+  position: relative;
+
+  width: 100%;
 
   overflow: hidden;
 
-  border-radius: 13px;
+  border-radius: 24px;
 
-  background: #eee;
+  background: #f4f4f4;
+
+  box-shadow:
+    0 18px 35px
+    rgba(0, 0, 0, 0.14);
+
+  transform:
+    translateY(0);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 
-.viewer-image-wrap img {
+.viewer-image-frame:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 24px 45px
+    rgba(0, 0, 0, 0.18);
+}
+
+
+.viewer-image-frame img {
+  width: 100%;
+
+  max-height: 52vh;
+
   display: block;
 
-  width: 100%;
-  height: 100%;
+  object-fit: cover;
 
-  max-height: 65vh;
-
-  object-fit: contain;
-
-  border-radius: 13px;
+  transition:
+    transform 0.6s ease;
 }
 
 
-.viewer-caption {
-  padding: 16px 8px 2px;
-
-  text-align: center;
+.viewer-image-frame:hover img {
+  transform:
+    scale(1.04);
 }
 
 
-.viewer-caption > span {
-  color: var(--sky-blue-dark);
+/* =========================================================
+   DETAILS
+========================================================= */
 
-  font-size: 8px;
-  font-weight: 800;
+.viewer-details {
+  position: relative;
 
-  letter-spacing: 2px;
+  z-index: 2;
+
+  padding:
+    22px
+    34px
+    30px;
+
+  font-family:
+    "Poppins",
+    sans-serif;
 }
 
 
-.viewer-caption h2 {
-  margin: 6px 0 5px;
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-dark);
+/* =========================================================
+   MEMORY ROW
+========================================================= */
 
-  font-size: 22px;
+.viewer-memory-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+
+.viewer-memory-number {
+  padding:
+    6px
+    12px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(140, 26, 16, 0.08);
+
+  color: #8C1A10;
+
+  font-size: 0.62rem;
+
   font-weight: 600;
+
+  letter-spacing: 1.4px;
 }
 
 
-.viewer-caption p {
+.viewer-heart {
+  color: #8C1A10;
+
+  font-size: 1.7rem;
+
+  line-height: 1;
+
+  animation:
+    heartFloat
+    2.5s ease-in-out
+    infinite;
+}
+
+
+@keyframes heartFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-4px);
+  }
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.viewer-title {
+  margin:
+    0
+    0
+    10px;
+
+  color: #292121;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 1.45rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.viewer-message {
   margin: 0;
 
-  color: var(--text-light);
+  color: #756b6b;
 
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Poppins",
+    sans-serif;
 
-  font-size: 11px;
+  font-size: 0.88rem;
 
-  font-style: italic;
+  font-weight: 400;
+
+  line-height: 1.8;
 }
 
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.viewer-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 24px;
+
+  color: #9a7777;
+
+  font-size: 0.58rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1.4px;
+}
+
+
+.viewer-footer span:first-child,
+.viewer-footer span:last-child {
+  width: 35px;
+
+  height: 1px;
+
+  background:
+    rgba(140, 26, 16, 0.25);
+}
 
 /* =========================================================
    MOBILE
@@ -916,70 +1223,153 @@
      PHOTO VIEWER
   ===================================================== */
 
-  .photo-viewer {
-    padding: 25px 30px;
+.photo-viewer {
+    padding: 16px;
   }
 
 
   .viewer-card {
-    width: 88%;
-
-    max-width: 320px;
-
-    max-height: 80vh;
-
-    padding: 7px 7px 14px;
-
-    border-radius: 16px;
-  }
-
-
-  .viewer-image-wrap {
     width: 100%;
+    max-width: 100%;
+    max-height: 88vh;
 
-    max-height: 48vh;
-
-    border-radius: 10px;
+    border-radius: 26px;
   }
 
 
-  .viewer-image-wrap img {
-    width: 100%;
-
-    max-height: 48vh;
-
-    object-fit: contain;
-
-    border-radius: 10px;
-  }
-
+  /* =======================================================
+     CLOSE BUTTON
+  ======================================================= */
 
   .viewer-close {
-    top: 6px;
-    right: 6px;
+    top: 14px;
+    right: 14px;
 
-    width: 29px;
-    height: 29px;
+    width: 38px;
+    height: 38px;
 
-    font-size: 19px;
+    font-size: 24px;
   }
 
 
-  .viewer-caption {
-    padding: 11px 6px 2px;
+  /* =======================================================
+     DECORATIONS
+  ======================================================= */
+
+  .viewer-decoration-one {
+    width: 140px;
+    height: 140px;
+
+    top: -65px;
+    left: -55px;
   }
 
 
-  .viewer-caption h2 {
-    margin: 4px 0;
+  .viewer-decoration-two {
+    width: 110px;
+    height: 110px;
 
-    font-size: 17px;
+    bottom: -50px;
+    right: -40px;
   }
 
 
-  .viewer-caption p {
-    font-size: 10px;
+  /* =======================================================
+     IMAGE
+  ======================================================= */
+
+  .viewer-image-wrap {
+    padding:
+      24px
+      24px
+      0;
   }
+
+
+  .viewer-image-frame {
+    border-radius: 20px;
+  }
+
+
+  .viewer-image-frame img {
+    max-height: 48vh;
+  }
+
+
+  /* =======================================================
+     DETAILS
+  ======================================================= */
+
+  .viewer-details {
+    padding:
+      20px
+      24px
+      26px;
+  }
+
+
+  /* =======================================================
+     MEMORY ROW
+  ======================================================= */
+
+  .viewer-memory-number {
+    padding:
+      5px
+      10px;
+
+    font-size: 0.58rem;
+
+    letter-spacing: 1.2px;
+  }
+
+
+  .viewer-heart {
+    font-size: 1.5rem;
+  }
+
+
+  /* =======================================================
+     TITLE
+  ======================================================= */
+
+  .viewer-title {
+    font-size: 1.25rem;
+
+    line-height: 1.4;
+  }
+
+
+  /* =======================================================
+     MESSAGE
+  ======================================================= */
+
+  .viewer-message {
+    font-size: 0.82rem;
+
+    line-height: 1.75;
+  }
+
+
+  /* =======================================================
+     FOOTER
+  ======================================================= */
+
+  .viewer-footer {
+    margin-top: 20px;
+
+    gap: 8px;
+
+    font-size: 0.52rem;
+
+    letter-spacing: 1px;
+  }
+
+
+  .viewer-footer span:first-child,
+  .viewer-footer span:last-child {
+    width: 25px;
+  }
+
 
 }
 

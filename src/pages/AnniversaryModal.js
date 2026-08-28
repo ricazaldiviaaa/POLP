@@ -3,6 +3,26 @@ import ReactMarkdown from "react-markdown";
 import "../css/AnniversaryModal.css";
 import "./../css/Responsive.css";
 
+const renderSpoilers = (text) => {
+  const parts = text.split(/(\|\|.*?\|\|)/g);
+
+  return parts.map((part, index) => {
+    const isSpoiler =
+      part.startsWith("||") &&
+      part.endsWith("||");
+
+    if (isSpoiler) {
+      return (
+        <span key={index} className="spoiler">
+          {part.slice(2, -2)}
+        </span>
+      );
+    }
+
+    return part;
+  });
+};
+
 function AnniversaryModal({
   data,
   onClose,
@@ -182,50 +202,151 @@ function AnniversaryModal({
 
 
 {/* =================================================
-    MESSAGE
+    MESSAGE SECTIONS
 ================================================= */}
 
-<div className="modal-message">
+{data.message && data.message.length > 0 && (
 
-  {data.message.map((paragraph, index) => {
+  <div className="modal-messages">
 
-    const parts = paragraph.split(/(==.*?==)/g);
+    {data.message.map((section, sectionIndex) => (
 
-    return (
-      <p key={index}>
+      <div
+        className="modal-message"
+        key={sectionIndex}
+      >
 
-        {parts.map((part, partIndex) => {
+        {/* =============================================
+            MESSAGE TITLE
+        ============================================= */}
 
-          if (
-            part.startsWith("==") &&
-            part.endsWith("==")
-          ) {
-            return (
-              <mark key={partIndex}>
-                {part.slice(2, -2)}
-              </mark>
-            );
-          }
+        {section.title && (
 
-          return (
-            <ReactMarkdown
-              key={partIndex}
-              components={{
-                p: ({ children }) => <>{children}</>
-              }}
-            >
-              {part}
-            </ReactMarkdown>
-          );
+          <h3 className="modal-message-title">
+            {section.title}
+          </h3>
 
-        })}
+        )}
 
-      </p>
-    );
 
-  })}
+        {/* =============================================
+            MESSAGE SUBTITLE
+        ============================================= */}
 
-</div>
+        {section.subtitle && (
+
+          <p className="modal-message-subtitle">
+            {section.subtitle}
+          </p>
+
+        )}
+
+
+{/* =============================================
+    MESSAGE CONTENT
+============================================= */}
+
+{section.content &&
+  section.content.map(
+    (paragraph, paragraphIndex) => {
+
+      if (!paragraph.trim()) {
+        return (
+          <div
+            key={paragraphIndex}
+            className="message-space"
+          />
+        );
+      }
+
+      const parts = paragraph.split(
+        /(==.*?==|\|\|.*?\|\|)/g
+      );
+
+      return (
+
+        <p
+          key={paragraphIndex}
+          className="modal-message-text"
+        >
+
+          {parts.map(
+            (part, partIndex) => {
+
+              /* =============================
+                 HIGHLIGHT
+              ============================= */
+
+              if (
+                part.startsWith("==") &&
+                part.endsWith("==")
+              ) {
+                return (
+
+                  <mark key={partIndex}>
+                    {part.slice(2, -2)}
+                  </mark>
+
+                );
+              }
+
+
+              /* =============================
+                 SPOILER
+              ============================= */
+
+              if (
+                part.startsWith("||") &&
+                part.endsWith("||")
+              ) {
+                return (
+
+                  <span
+                    key={partIndex}
+                    className="spoiler"
+                  >
+                    {part.slice(2, -2)}
+                  </span>
+
+                );
+              }
+
+
+              /* =============================
+                 NORMAL MARKDOWN
+              ============================= */
+
+              return (
+
+                <ReactMarkdown
+                  key={partIndex}
+                  components={{
+                    p: ({ children }) => (
+                      <>{children}</>
+                    ),
+                  }}
+                >
+                  {part}
+                </ReactMarkdown>
+
+              );
+
+            }
+          )}
+
+        </p>
+
+      );
+
+    }
+  )}  
+      </div>
+
+    ))}
+
+  </div>
+
+)}
 
 
         {/* =================================================

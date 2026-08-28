@@ -14,6 +14,7 @@ import lunch from "../data/lunch";
 import dinner from "../data/dinner";
 import streetFoods from "../data/streetFoods";
 import highUricAcid from "../data/highUricAcid";
+import sweets from "../data/sweets";
 
 import "../css/MemoryScreen.css";
 import "../css/Responsive.css";
@@ -37,6 +38,7 @@ function MemoryScreen( { scrollToTop } ) {
     dinner,
     streetFoods,
     highUricAcid,
+    sweets,
   ];
 
 

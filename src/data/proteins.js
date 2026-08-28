@@ -7,7 +7,6 @@ const proteins = {
   choose: [
     "Eggs",
     "Skinless chicken breast",
-    "Lean pork - small portion",
     "Tilapia - small portion",
     "Milkfish (Bangus) - small portion",
     "Galunggong (Round scad) - small portion",

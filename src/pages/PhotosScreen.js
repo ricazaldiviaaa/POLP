@@ -25,6 +25,7 @@ import photo19 from "../assets/photos/19.jpg";
 import photo20 from "../assets/photos/20.jpg";
 import photo21 from "../assets/photos/21.jpg";
 import photo22 from "../assets/photos/22.jpg";
+import photo23 from "../assets/photos/23.jpg";
 
 function PhotosScreen() {
 
@@ -53,6 +54,7 @@ function PhotosScreen() {
     { id: 20, image: photo20, caption: "The always tambay in Lotus Mall" },
     { id: 21, image: photo21, caption: "Papa's Birthday" },
     { id: 22, image: photo22, caption: "Tita Joie's suddenly gala" },
+    { id: 23, image: photo23, caption: "Second Anniversary" },
   ];
 
   return (
@@ -164,56 +166,101 @@ function PhotosScreen() {
       </div>
 
 
-      {/* PHOTO MODAL */}
-      {selectedPhoto && (
+{/* =================================================
+    PHOTO MODAL
+================================================= */}
 
-        <div
-          className="photo-viewer"
-          onClick={() => setSelectedPhoto(null)}
-        >
+{selectedPhoto && (
 
-          <div
-            className="viewer-card"
-            onClick={(e) => e.stopPropagation()}
-          >
+  <div
+    className="photo-viewer"
+    onClick={() => setSelectedPhoto(null)}
+  >
 
-            <button
-              type="button"
-              className="viewer-close"
-              onClick={() => setSelectedPhoto(null)}
-              aria-label="Close photo"
-            >
-              ×
-            </button>
+    <div
+      className="viewer-card"
+      onClick={(e) => e.stopPropagation()}
+    >
 
-            <div className="viewer-image-wrap">
+      {/* CLOSE BUTTON */}
 
-              <img
-                src={selectedPhoto.image}
-                alt={selectedPhoto.caption}
-              />
+      <button
+        type="button"
+        className="viewer-close"
+        onClick={() => setSelectedPhoto(null)}
+        aria-label="Close photo"
+      >
+        ×
+      </button>
 
-            </div>
 
-            <div className="viewer-caption">
+      {/* TOP DECORATION */}
 
-              <span>
-                MEMORY {String(selectedPhoto.id).padStart(2, "0")}
-              </span>
+      <div className="viewer-decoration viewer-decoration-one"></div>
 
-              <h2>
-                {selectedPhoto.caption}
-              </h2>
+      <div className="viewer-decoration viewer-decoration-two"></div>
 
-              <p>
-                A little moment I want to remember forever.
-              </p>
 
-            </div>
+      {/* IMAGE */}
 
-          </div>
+      <div className="viewer-image-wrap">
+
+        <div className="viewer-image-frame">
+
+          <img
+            src={selectedPhoto.image}
+            alt={selectedPhoto.caption}
+          />
 
         </div>
+
+      </div>
+
+
+      {/* CONTENT */}
+
+      <div className="viewer-details">
+
+        <div className="viewer-memory-row">
+
+          <span className="viewer-memory-number">
+            MEMORY {String(selectedPhoto.id).padStart(2, "0")}
+          </span>
+
+          <span className="viewer-heart">
+            ♡
+          </span>
+
+        </div>
+
+
+        <h2 className="viewer-title">
+          {selectedPhoto.caption}
+        </h2>
+
+
+        <p className="viewer-message">
+          A little moment I want to remember forever.
+        </p>
+
+
+        {/* BOTTOM DECORATION */}
+
+        <div className="viewer-footer">
+
+          <span></span>
+
+          <span>OUR LITTLE MEMORY</span>
+
+          <span></span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
       )}
 
