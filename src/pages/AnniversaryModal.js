@@ -3,28 +3,9 @@ import ReactMarkdown from "react-markdown";
 import "../css/AnniversaryModal.css";
 import "./../css/Responsive.css";
 
-const renderSpoilers = (text) => {
-  const parts = text.split(/(\|\|.*?\|\|)/g);
 
-  return parts.map((part, index) => {
-    const isSpoiler =
-      part.startsWith("||") &&
-      part.endsWith("||");
-
-    if (isSpoiler) {
-      return (
-        <span key={index} className="spoiler">
-          {part.slice(2, -2)}
-        </span>
-      );
-    }
-
-    return part;
-  });
-};
 
 function AnniversaryModal({
-  renderSpoilers,
   data,
   onClose,
   isFavorite,
